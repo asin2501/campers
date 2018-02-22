@@ -1,0 +1,150 @@
+.patriot-tv {
+    @extend .full-screen-component;
+
+    @include background-component("../images/big-bg/bg6.jpg", 50%, 50%);
+
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -10;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .tv-slider-container {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        bottom: 130px;
+        left: 0;
+        z-index: -10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: transparent;
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 0.4s;
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        &.active {
+            z-index: 10;
+            opacity: 1;
+        }
+
+        &.js-video-full {
+            z-index: -10;
+            margin: 0 200px;
+
+            &.active {
+                transition-delay: 0.2s;
+            }
+        }
+
+        .close-full-video {
+            transform: translateY(-100%);
+        }
+
+        .arrow-container {
+            display: none;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 35px;
+
+            .arrow-slider {
+                position: relative;
+                height: 100vh;
+                background-position: 50% 50%;
+            }
+
+            &.left {
+                left: 20px;
+            }
+
+            &.right {
+                right: 20px;
+            }
+        }
+    }
+
+    @include breakpoint(extra-large) {
+        .tv-slider-container {
+            &.js-video-full {
+                margin: 0 100px;
+            }
+        }
+    }
+
+
+    @include breakpoint(medium) {
+        height: auto;
+        padding: 80px 0;
+
+        .tv-slider-container {
+            //position: relative;
+            position: absolute;
+            top: 0;
+            z-index: -100;
+            display: flex;
+            opacity: 0;
+
+            &.active {
+                //display: flex;
+                position: relative;
+                z-index: 1;
+                opacity: 1;
+            }
+
+            .arrow-container {
+                display: block;
+            }
+
+            &.js-video-full {
+                margin: 0 20px;
+            }
+
+            &.js-video-gallery {
+                .tv-slider {
+                    .arrow-white-right, .arrow-white-left {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        .tv-slider-container {
+            .arrow-container {
+                width: 20px;
+
+                .arrow-slider {
+                    width: 20px;
+                    background-size: contain;
+                }
+
+                &.left {
+                    left: 8px;
+                }
+
+                &.right {
+                    right: 8px;
+                }
+            }
+        }
+    }
+}

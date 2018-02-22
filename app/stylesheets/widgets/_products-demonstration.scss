@@ -1,0 +1,51 @@
+.products-demonstration {
+    position: relative;
+    z-index: 15;
+    height: auto;
+    margin-top: 0;
+
+    .description-line-360 {
+        position: static;
+        opacity: 1;
+        background-color: #FFF;
+
+        .product-content {
+            .left {
+                left: 3.6%;
+            }
+        }
+    }
+
+    & > * {
+        @extend .full-screen-component;
+
+        padding-top: 14vh;
+    }
+
+    @media (max-width: 1920px) {
+        & > * {
+            padding-top: 120px;
+        }
+    }
+
+    @include breakpoint(large) {
+        & > * {
+            padding-top: 16vh;
+        }
+    }
+
+
+    @include breakpoint(medium) {
+        & > * {
+            height: auto;
+            padding-top: 60px;
+        }
+    }
+
+
+    @include breakpoint(full-mobile-landscape) {
+        & > .tour360-inner-block {
+            height: auto;
+        }
+    }
+}

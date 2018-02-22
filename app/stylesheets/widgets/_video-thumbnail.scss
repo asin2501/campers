@@ -1,0 +1,61 @@
+.video-thumbnail {
+    position: relative;
+    display: block;
+    height: 26vh;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #fff;
+    font-size: rem(14);
+    box-sizing: border-box;
+
+    @include background-component("", 50%, 50%);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 42px;
+        height: 42px;
+        margin-top: -21px;
+        margin-left: -21px;
+        background-image: url("../images/play.png");
+    }
+
+    img {
+        display: none;
+    }
+
+    .video-thumbnail-description {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        font-family: $pn-medium;
+        color: #fff;
+    }
+
+    @include breakpoint(large) {
+        padding: 8px;
+
+        &::before {
+            display: none;
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        font-size: rem(14px);
+        line-height: 1;
+
+        h5 {
+            font-size: rem(15px);
+        }
+    }
+
+
+    @include breakpoint(full-mobile-landscape) {
+        height: 26vw;
+    }
+}

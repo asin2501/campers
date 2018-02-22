@@ -1,0 +1,84 @@
+.compare {
+    .camper-trailers-header {
+        position: absolute;
+        top: 90px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
+        z-index: 1;
+    }
+
+    .compare-tab {
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        opacity: 0;
+
+        &.js-tab-active {
+            position: relative;
+            z-index: auto;
+            opacity: 1;
+        }
+    }
+
+    .camper-trailers {
+        padding-top: 0;
+        display: block;
+        height: auto;
+
+        .camper-trailers-header .select {
+            display: block;
+        }
+    }
+
+    .compare-section {
+        display: flex;
+    }
+
+    @include breakpoint(large) {
+        .camper-trailers-header {
+            top: 75px;
+
+            h2 {
+                margin-bottom: 0;
+            }
+
+            .select h6 {
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        .camper-trailers {
+            background-image: none;
+
+            .compare-tab {
+                width: 150%;
+                transition-duration: 0.3s;
+                transition-property: transform;
+                transition-timing-function: linear;
+
+                &.shifted {
+                    transform: translateX(-33.33%);
+                }
+            }
+
+            .camper-trailers-header {
+                .double-line-button {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        .button-group {
+            max-width: 300px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}

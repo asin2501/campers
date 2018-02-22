@@ -1,0 +1,74 @@
+.customized-super-tourer {
+    .description-line-360 {
+        position: absolute;
+
+        .inner-functionality-car {
+            position: absolute;
+            left: 0;
+            bottom: 5vh;
+            z-index: -1;
+            width: 50%;
+        }
+
+        .plus-point-group {
+            opacity: 1;
+
+            &.group-08 {
+                bottom: 5vh;
+                left: 0;
+                width: 50vw;
+                height: 27vw;
+            }
+        }
+    }
+
+    .vertical-rounded-slider-wrapper {
+        top: 60%;
+    }
+
+    @include breakpoint(large) {
+        .vertical-rounded-slider-wrapper {
+            top: 65%;
+        }
+    }
+
+
+    @media (min-height: 1200px) {
+        .vertical-rounded-slider-wrapper {
+            top: 45%;
+        }
+
+        .description-line-360 {
+            .inner-functionality-car {
+                bottom: 15vh;
+            }
+
+            .plus-point-group {
+                &.group-08 {
+                    bottom: 15vh;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        height: auto;
+
+        .description-line-360 {
+            position: static;
+
+            .inner-functionality-car {
+                position: static;
+                width: 100%;
+            }
+        }
+    }
+
+
+    @include breakpoint(full-mobile-landscape) {
+        &.tour360-inner-block {
+            height: auto;
+            padding-bottom: 0;
+        }
+    }
+}

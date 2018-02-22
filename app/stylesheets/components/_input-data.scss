@@ -1,0 +1,23 @@
+.input-data {
+    display: flex;
+
+    .title {
+        align-self: flex-end;
+        margin-right: 10px;
+        font-family: $pn-semibold;
+        font-size: rem(12);
+        line-height: 9px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $dark-gray;
+    }
+
+    input {
+        width: 100%;
+        border-top: none;
+        border-right: none;
+        border-bottom: 1px solid #bdbdbd;
+        border-left: none;
+        background-color: transparent;
+    }
+}

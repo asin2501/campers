@@ -1,0 +1,18 @@
+.mobile-menu-button {
+    display: block;
+    width: 27px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    span {
+        display: block;
+        height: 3px;
+        margin-bottom: 5px;
+        background-color: #000;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

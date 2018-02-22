@@ -1,0 +1,153 @@
+.camper-trailers-section {
+    padding-top: 33px;
+    text-align: center;
+    padding-bottom: 55px;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 65%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to top, transparent, #ececec);
+    }
+
+    .standart-header {
+        padding-bottom: 70px;
+
+        h2 {
+            margin-bottom: 15px;
+        }
+    }
+
+    .button {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 11px;
+        padding-right: 11px;
+        border-width: 3px;
+    }
+
+    @include breakpoint(small) {
+        padding-top: 0;
+    }
+}
+
+//Slider wrapper
+.home-ct {
+    margin-bottom: 44px;
+
+    .camper-slider-item {
+        padding: 0 25px;
+    }
+
+    .camper-slider-item-content {
+        text-align: center;
+
+        h6 {
+            margin-top: 15px;
+            margin-bottom: 26px;
+            font-size: 10px;
+            letter-spacing: 1.8px;
+        }
+
+        img {
+            display: inline-block;
+        }
+    }
+
+    .slick-arrow {
+        z-index: 3;
+        width: 30px;
+        height: 80px;
+
+        &.slick-prev {
+            left: 0px;
+            top: 45.5%;
+        }
+
+        &.slick-next {
+            right: 0px;
+            top: 45.5%;
+        }
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+
+    @include breakpoint(extra-small) {
+        .slick-arrow {
+            width: 20px;
+            height: 50px;
+
+            &.slick-prev {
+                top: 25px;
+                left: 10px;
+            }
+
+            &.slick-next {
+                top: 25px;
+                right: 10px;
+            }
+        }
+    }
+}
+
+@include breakpoint(no-mobile) {
+    .camper-trailers-section {
+        .standart-header {
+            opacity: 0;
+            transform: translateY(-80px);
+            transition-property: opacity, transform;
+            transition-duration: 0.8s;
+            transition-delay: 1.4s;
+        }
+
+        .home-ct {
+            .slick-slide {
+                opacity: 0;
+                transform: translateX(2000px);
+                transition-property: opacity, transform;
+                transition-duration: 1s;
+
+                @for $i from 1 through 5 {
+                    &:nth-of-type(#{$i}) {
+                        transition-delay: 0.2s * $i;
+                    }
+                }
+            }
+        }
+
+        .button {
+            opacity: 0;
+            transform: translateY(60px);
+            transition-property: opacity, transform;
+            transition-duration: 0.8s;
+            transition-delay: 1.8s;
+        }
+
+        &.animation {
+            .standart-header {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .home-ct {
+                .slick-slide {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            .button {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}

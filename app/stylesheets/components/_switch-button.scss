@@ -1,0 +1,43 @@
+.switch-button {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    display: none;
+    width: 35px;
+    padding: 0;
+    border: none;
+    background-size: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    transition-duration: 0.3s;
+    transition-property: left, right;
+    transition-tining-function: linear;
+
+    &.hidden {
+        &.button-left {
+            right: -55px;
+        }
+
+        &.button-right {
+            left: -55px;
+        }
+    }
+
+    &.button-left {
+        right: 0;
+        background-image: url("../images/arrow-black-right.png");
+        border-left: 1px solid #000;
+    }
+
+    &.button-right {
+        left: 0;
+        background-image: url("../images/arrow-black-left.png");
+        border-right: 1px solid #000;
+    }
+
+    @include breakpoint(small-tablet-portrait) {
+        display: block;
+    }
+}

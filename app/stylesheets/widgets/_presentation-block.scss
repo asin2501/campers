@@ -1,0 +1,160 @@
+.presentation-block {
+    position: relative;
+    padding-top: 140px;
+    padding-right: 350px;
+    padding-bottom: 130px;
+
+    h1 {
+        font-size: rem(59px);
+        font-family: $pn-black;
+        line-height: 0.85;
+    }
+
+    h3 {
+        font-family: $pn-light;
+        letter-spacing: normal;
+    }
+
+    .advantages {
+        display: flex;
+        margin-top: 65px;
+        margin-bottom: 60px;
+        color: #333;
+
+        li {
+            display: flex;
+            align-items: center;
+            line-height: 1.2;
+
+            &:not(:first-of-type) {
+                margin-left: 35px;
+            }
+
+            span {
+                padding-left: 10px;
+                padding-top: 10px;
+                font-size: rem(15px);
+                letter-spacing: -0.5px;
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+
+    @include breakpoint(small) {
+        padding-top: 90px;
+        text-align: center;
+
+        h1 {
+            font-size: rem(40px);
+        }
+
+        .advantages {
+            justify-content: center;
+            margin-top: 35px;
+        }
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        h1 {
+            font-size: rem(30px);
+        }
+
+        h3 {
+            font-size: rem(20px);
+        }
+
+        .advantages {
+            justify-content: space-around;
+
+            li {
+                flex-direction: column;
+
+                span {
+                    padding-left: 0;
+                    font-size: rem(14);
+                }
+
+                &:not(:first-of-type) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        h1 {
+            font-size: rem(22px);
+
+            br {
+                display: none;
+            }
+        }
+
+        h3 {
+            font-size: rem(15px);
+        }
+    }
+}
+
+$top-block-timecoef: 0.8;
+
+@include breakpoint(no-mobile) {
+    .presentation-block {
+        h1 {
+            transform: translateX(-400px);
+            opacity: 0;
+            transition-property: opacity, transform;
+            transition-duration: 1s * $top-block-timecoef;
+        }
+
+        h3 {
+            transform: translateX(400px);
+            opacity: 0;
+            transition-property: opacity, transform;
+            transition-duration: 1s * $top-block-timecoef;
+        }
+
+        .advantages {
+            li {
+                opacity: 0;
+                transform: translateY(100px);
+                transition-property: opacity, transform;
+                transition-duration: 0.5s * $top-block-timecoef;
+
+                @for $i from 1 through 3 {
+                    &:nth-of-type(#{$i}) {
+                        transition-delay: 0.3s + 0.3s * $i;
+                    }
+                }
+            }
+        }
+    }
+
+    .animation {
+        .presentation-block {
+            h1 {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            h3 {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            .advantages {
+                li {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

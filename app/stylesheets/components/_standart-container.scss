@@ -1,0 +1,19 @@
+.standart-container {
+    max-width: 1174px;
+    margin: 0 auto;
+
+    @include breakpoint(large) {
+        max-width: inherit;
+        margin: 0 120px;
+    }
+
+
+    @include breakpoint(medium) {
+        margin: 0 90px;
+    }
+
+
+    @include breakpoint(small) {
+        margin: 0 30px;
+    }
+}

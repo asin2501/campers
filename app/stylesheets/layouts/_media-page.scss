@@ -1,0 +1,132 @@
+.media-page {
+    .media {
+        padding-top: 90px;
+        padding-bottom: 350px;
+
+        .media-header {
+            text-align: center;
+            color: #000;
+
+            h2 {
+                margin-top: 0;
+                margin-bottom: 40px;
+            }
+        }
+
+        .patriot-tv {
+            height: auto;
+            background-image: none;
+            color: #000;
+            z-index: auto;
+            display: none;
+
+            &.js-tab-active {
+                display: block;
+            }
+
+            .tv-slider-container {
+                &.active {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    z-index: 1;
+                }
+            }
+
+            .js-video-full {
+                z-index: -1;
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .close-full-video {
+            background-image: url("../images/black-cross.png");
+            background-size: contain;
+            z-index: 1;
+        }
+
+        .full-video-slide .description .share-link {
+            color: #000;
+        }
+
+        .arrow-slider {
+            background-size: contain;
+
+            &.arrow-white-right {
+                background-image: url("../images/arrow-black-right.png");
+            }
+
+            &.arrow-white-left {
+                background-image: url("../images/arrow-black-left.png");
+            }
+        }
+
+        @include breakpoint(medium) {
+            padding-bottom: 50px;
+
+            h6 {
+                br {
+                    display: none;
+                }
+            }
+
+            .patriot-tv {
+                padding: 0;
+            }
+        }
+
+
+        @include breakpoint(small) {
+            padding-left: 60px;
+            padding-right: 60px;
+
+            .patriot-tv {
+                width: auto;
+                margin-left: -60px;
+                margin-right: -60px;
+            }
+        }
+
+
+        @include breakpoint(extra-small) {
+            padding-left: 30px;
+            padding-right: 30px;
+
+            .patriot-tv {
+                margin-left: -30px;
+                margin-right: -30px;
+            }
+
+            .close-full-video {
+                right: -8px;
+                top: 0;
+            }
+        }
+
+
+        @include breakpoint(mobile-landscape) {
+            padding-left: 20px;
+            padding-right: 20px;
+
+            .patriot-tv {
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+
+            .media-header {
+                h2 {
+                    margin-bottom: 20px;
+                }
+
+                h6 {
+                    font-size: rem(11);
+                }
+            }
+        }
+    }
+}

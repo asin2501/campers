@@ -1,0 +1,239 @@
+.camper-trailers {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 90px;
+    background-image: url("../images/shadow-background-top.jpg");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+
+    &.vertical-line {
+        position: relative;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 12;
+            display: block;
+            width: 0;
+            border-right: 1px solid #a2a2a2;
+            border-left: 1px solid #c6c6c6;
+            opacity: 0.3;
+        }
+
+        &::before {
+            left: 25%;
+        }
+
+        &::after {
+            right: 25%;
+        }
+    }
+
+    .camper-trailers-header {
+        text-align: center;
+        height: 108px;
+        margin-bottom: 20px;
+
+        &.short {
+            height: auto;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .select {
+            h6 {
+                margin-bottom: 16px;
+            }
+
+            .double-line-button {
+                margin: 0 9px;
+            }
+
+            transition-property: opacity, transform;
+            transition-duration: 0.8s;
+            transition-timing-function: ease-out;
+
+            @include breakpoint(no-mobile) {
+                &.hidden {
+                    opacity: 0;
+                    transform: translateY(300px);
+                }
+            }
+        }
+    }
+
+    .camper-main-part {
+        position: relative;
+        height: 100%;
+        box-sizing: border-box;
+
+        .trailers-slider {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 10;
+            width: 120%;
+            transform: translateX(-50%) translateY(-50%);
+            padding-bottom: 90px;
+
+            .arrow-slider {
+                top: 28%;
+                background-size: contain;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 35%;
+                z-index: -1;
+                display: block;
+                width: 100%;
+                height: 50vh;
+                background-image: url("../images/shadow-bg-bottom.png");
+                background-size: 100% 100%;
+                background-position: 0 100%;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        height: auto;
+        min-height: calc(100vh - 175px);
+        padding-top: 65px;
+
+        .camper-trailers-header {
+            height: auto;
+            margin-bottom: 0;
+
+            &.short {
+                h2 {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &.vertical-line {
+            &::before {
+                left: 10%;
+            }
+
+            &::after {
+                right: 10%;
+            }
+        }
+
+        .camper-main-part {
+            height: auto;
+
+            .trailers-slider {
+                width: 100%;
+                position: static;
+                transform: none;
+                padding-bottom: 0;
+
+                .arrow-green-left {
+                    left: 20px;
+                }
+
+                .arrow-green-right {
+                    right: 20px;
+                }
+            }
+        }
+    }
+
+
+    @media (max-height: 850px) and (min-width: 1999px) {
+        padding-top: 70px;
+
+        .camper-trailers-header {
+            margin-bottom: 60px;
+
+            h2 {
+                margin-bottom: 5px;
+            }
+
+            .select {
+                h6 {
+                    margin-bottom: 6px;
+                }
+
+                .double-line-button {
+                    margin: 0 4px;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        .camper-trailers-header {
+            .select {
+                display: none;
+            }
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .camper-main-part {
+            .trailers-slider {
+                .arrow-green-left {
+                    left: 10px;
+                }
+
+                .arrow-green-right {
+                    right: 10px;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        &.vertical-line {
+            &::before, &::after {
+                display: none;
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        .camper-trailers-header {
+            margin-bottom: 40px;
+
+            h2 {
+                margin-bottom: 6px;
+            }
+        }
+
+        .camper-main-part {
+            .trailers-slider {
+                .arrow-green-right, .arrow-green-left {
+                    top: 15%;
+                    background-size: 30%;
+                    background-position: 50% 50%;
+
+                    //transform: scale(0.3);
+               
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        .camper-trailers-header {
+            margin-bottom: 25px;
+        }
+    }
+}

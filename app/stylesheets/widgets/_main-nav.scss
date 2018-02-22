@@ -1,0 +1,44 @@
+.main-nav {
+    @extend %header-paddings;
+
+    background-color: $header-bgc;
+
+    .main-nav-link-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+
+        .main-nav-link {
+            margin-left: 100px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            a {
+                display: block;
+                padding: 5px 10px;
+                font-size: rem(12);
+                letter-spacing: rem(1.2);
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(extra-large) {
+        .main-nav-link-list {
+            .main-nav-link {
+                margin-left: 30px;
+            }
+        }
+    }
+
+
+    @include breakpoint(medium) {
+        display: none;
+    }
+}

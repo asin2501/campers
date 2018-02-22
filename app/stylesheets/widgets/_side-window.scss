@@ -1,0 +1,173 @@
+.side-window-wrapper {
+    position: absolute;
+    right: 0;
+    top: 80px;
+    bottom: -50px;
+    width: 350px;
+    border: 4px solid $green;
+
+    .side-window {
+        position: absolute;
+        top: -80px;
+        right: 20px;
+        bottom: 20px;
+        left: -20px;
+        background-image: url("../images/homepage/wastland-small-bg.jpg");
+        background-size: cover;
+        background-position: 50% 50%;
+
+        .social-block {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+        }
+
+        .logo-figure {
+            display: block;
+            margin-right: 20px;
+            margin-left: auto;
+        }
+
+        .car-foreground {
+            position: absolute;
+            bottom: 25px;
+            right: 110px;
+            max-width: inherit;
+        }
+    }
+
+    @include breakpoint(medium) {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        height: 600px;
+        margin-top: -140px;
+        margin-bottom: -40px;
+        margin-left: auto;
+
+        .side-window {
+            top: -20px;
+            right: -20px;
+            left: 20px;
+        }
+    }
+
+
+    @include breakpoint(small) {
+        height: 700px;
+        margin-top: 60px;
+        margin-right: auto;
+
+        .side-window {
+            .car-foreground {
+                right: 50%;
+                bottom: 65px;
+                max-width: 90vw;
+                transform: translateX(45%);
+            }
+        }
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        max-width: 100%;
+        height: 500px;
+
+        .side-window {
+            .logo-figure {
+                max-width: 180px;
+            }
+
+            .car-foreground {
+                bottom: 45px;
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        height: 360px;
+
+        .side-window {
+            bottom: 10px;
+            left: 10px;
+
+            .logo-figure {
+                max-width: 140px;
+            }
+        }
+    }
+}
+
+@include breakpoint(no-mobile) {
+    .side-window-wrapper {
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 2s * $top-block-timecoef;
+        transition-delay: 2s * $top-block-timecoef;
+    }
+
+    .side-window {
+        transition-property: transform;
+        transition-duration: 1s * $top-block-timecoef;
+        transition-delay: 2.5s * $top-block-timecoef;
+        transform: translateX(20px) translateY(20px);
+    }
+
+    .logo-figure {
+        transform: translateY(-100%);
+        transition-property: transform;
+        transition-duration: 1.5s * $top-block-timecoef;
+        transition-delay: 3s * $top-block-timecoef;
+    }
+
+    .car-foreground {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.7);
+        transition-property: transform, opacity;
+        transition-duration: 1.5s * $top-block-timecoef;
+        transition-delay: 2s * $top-block-timecoef;
+    }
+
+    .social-icons {
+        li {
+            opacity: 0;
+            transform: translateY(50px);
+            transition-property: transform, opacity;
+            transition-duration: 1s * $top-block-timecoef;
+
+            @for $i from 1 through 3 {
+                &:nth-of-type(#{$i}) {
+                    transition-delay: 2.3s + 0.3s * $i * $top-block-timecoef;
+                }
+            }
+        }
+    }
+
+    .animation {
+        .side-window-wrapper {
+            opacity: 1;
+        }
+
+        .side-window {
+            transform: translateX(0) translateY(0);
+        }
+
+        .logo-figure {
+            transform: translateY(0);
+        }
+
+        .car-foreground {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+
+        .social-icons {
+            li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}

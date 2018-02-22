@@ -1,0 +1,96 @@
+.distributors-infobox {
+    padding: 6px;
+
+    .inner-wrapper {
+        background-color: #FFF;
+        box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.3);
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        .distributor-information {
+            position: relative;
+            display: block;
+            padding-left: 50px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            h5 {
+                font-family: $pn-black;
+                font-size: rem(14);
+            }
+
+            address {
+                font-family: $pn-light;
+                font-size: rem(12);
+                font-style: normal;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                margin-top: -4px;
+                width: 8px;
+                height: 12px;
+                background-image: url("../images/extra-small-arrow.png");
+                animation-name: small-arrow-moving;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+            }
+        }
+    }
+
+    .loction-icon {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    // @include breakpoint(small-tablet-portrait) {
+    //     .inner-wrapper {
+    //         .close-popups {
+    //             display: block;
+    //         }
+    //     }
+    // }
+
+    @include breakpoint(small-tablet-portrait) {
+        .inner-wrapper {
+            .distributor-information {
+                padding-right: 20px;
+
+                h5 {
+                    font-size: rem(12);
+                }
+
+                address {
+                    font-size: rem(11);
+                }
+
+                &::after {
+                    right: 5px;
+                    animation-name: none;
+                }
+            }
+        }
+    }
+}
+
+@keyframes small-arrow-moving {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

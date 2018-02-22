@@ -1,0 +1,132 @@
+.lead-the-pack-slider {
+    .lead-the-pack-slide {
+        text-align: center;
+        color: #fff;
+
+        img {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .item-description {
+            max-width: 440px;
+            margin: 0 auto;
+            letter-spacing: normal;
+            line-height: 1.2;
+
+            h5 {
+                font-family: $pn-bold;
+                font-size: rem(21);
+                margin-bottom: 15px;
+            }
+
+            h5 + p {
+                font-family: $pn-black;
+            }
+
+            p {
+                font-family: $pn-medium;
+                font-size: rem(13);
+
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .slick-arrow {
+        position: absolute;
+        top: 35%;
+        z-index: 10;
+        width: 60px;
+        height: 110px;
+        margin-top: -55px;
+        background-color: transparent;
+        border: none;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        font-size: 0;
+
+        &.slick-prev {
+            left: 50px;
+            background-image: url("../images/arrow-black-left-big.png");
+        }
+
+        &.slick-next {
+            right: 50px;
+            background-image: url("../images/arrow-black-right-big.png");
+        }
+    }
+
+    @media (min-width: 2000px) {
+        margin-top: 100px;
+
+        .lead-the-pack-slide {
+            img {
+                max-width: 800px;
+            }
+        }
+    }
+
+    @include breakpoint(large) {
+        .lead-the-pack-slide {
+            img {
+                max-width: 330px;
+            }
+        }
+
+        .slick-arrow {
+            width: 30px;
+            height: 110px;
+        }
+    }
+
+
+    @include breakpoint(medium) {
+        .lead-the-pack-slide {
+            padding-bottom: 30px;
+
+            img {
+                max-width: 500px;
+            }
+        }
+
+        .slick-arrow {
+            top: 35%;
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .lead-the-pack-slide {
+            img, .item-description {
+                max-width: 90%;
+            }
+
+            .item-description {
+                width: auto;
+                max-width: inherit;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+        }
+
+        .slick-arrow {
+            top: auto;
+            bottom: 15%;
+            width: 20px;
+
+            &.slick-prev {
+                left: 10px;
+                background-image: url("../images/arrow-white-left.png");
+            }
+
+            &.slick-next {
+                right: 10px;
+                background-image: url("../images/arrow-white-right.png");
+            }
+        }
+    }
+}

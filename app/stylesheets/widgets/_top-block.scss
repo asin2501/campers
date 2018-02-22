@@ -1,0 +1,252 @@
+.top-block {
+    @extend .full-screen-component;
+
+    z-index: 1000;
+
+    .top-block-inner-wrapper {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: auto;
+
+        @extend .full-screen-component;
+
+        @include background-component("../images/big-bg/top-banner.jpg", 50%, 50%);
+    }
+
+    .top-block-logo {
+        position: absolute;
+        top: 26%;
+        right: 0;
+    }
+
+    .anchor-to-bottom {
+        display: block;
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        width: 100px;
+        margin-left: -50px;
+        font-size: rem(16);
+        font-family: $pn-bold;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: rem(3);
+        color: #fff;
+
+        img {
+            margin-top: 8px;
+            animation-name: bottom-top-bottom;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+    }
+
+    .quality-label {
+        position: absolute;
+        top: 50%;
+        right: 80px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &.super-tourer {
+        .top-block-inner-wrapper {
+            background-position: 50% 50%;
+        }
+
+        .top-block-logo {
+            right: 80px;
+        }
+
+        h2 {
+            position: absolute;
+            top: 26%;
+            left: 80px;
+            margin-top: 0;
+            font-size: 90px;
+            font-family: $pn-black;
+            line-height: 0.8;
+            letter-spacing: normal;
+            color: #fff;
+        }
+    }
+
+    @include breakpoint(extra-large) {
+        .quality-label {
+            right: 40px;
+
+            h4 {
+                letter-spacing: rem(1);
+            }
+        }
+    }
+
+
+    @include breakpoint(large) {
+        .top-block-logo {
+            top: 20%;
+            width: 430px;
+        }
+
+        .quality-label {
+            top: 55%;
+        }
+
+        &.super-tourer {
+            .top-block-logo {
+                top: 20%;
+                right: 20px;
+                width: 250px;
+            }
+
+            h2 {
+                top: 20%;
+                left: 20px;
+                font-size: 50px;
+                color: #fff;
+                line-height: 0.9;
+            }
+        }
+    }
+
+
+    @include breakpoint(medium) {
+        .top-block-inner-wrapper {
+            background-position: 10% 50%;
+        }
+
+        .anchor-to-bottom {
+            display: none;
+            bottom: 20px;
+            font-size: rem(13);
+
+            img {
+                width: 30%;
+            }
+        }
+
+        .quality-label {
+            top: auto;
+            right: 50%;
+            transform: translateX(50%);
+            bottom: 30px;
+
+            img {
+                width: 180px;
+            }
+        }
+
+        .top-block-inner-wrapper {
+            position: static;
+        }
+
+        .top-block-logo {
+            position: absolute;
+            top: 60px;
+            right: 50%;
+            width: 120px;
+            margin-right: -60px;
+        }
+
+        &.super-tourer {
+            .top-block-logo {
+                margin-right: 0;
+            }
+        }
+    }
+
+
+    @include breakpoint(small) {
+        &.super-tourer {
+            .top-block-logo {
+                top: 80px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+
+            h2 {
+                top: 200px;
+                right: 20px;
+                text-align: center;
+                font-size: 30px;
+
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        &.super-tourer {
+            .top-block-logo {
+                top: 70px;
+                width: 180px;
+            }
+
+            h2 {
+                top: 150px;
+            }
+        }
+    }
+
+
+    @include breakpoint(full-mobile-landscape) {
+        &.super-tourer {
+            .top-block-logo {
+                top: 70px;
+                width: 180px;
+            }
+
+            h2 {
+                top: auto;
+                bottom: 0;
+            }
+        }
+    }
+
+
+    @media (max-height: 370px) {
+        .top-block-logo {
+            width: 80px;
+            margin-right: -40px;
+        }
+
+        .anchor-to-bottom {
+            display: none;
+        }
+
+        .quality-label {
+            width: 320px;
+            bottom: 10px;
+
+            img {
+                width: 150px;
+            }
+        }
+    }
+}
+
+@keyframes bottom-top-bottom {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

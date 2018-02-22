@@ -1,0 +1,90 @@
+.history-line-widget {
+    $history-line-point-size: 34px;
+
+    position: relative;
+    margin-bottom: 30px;
+
+    .history-line-inner-wrapper {
+        width: $history-line-point-size;
+
+        .history-line {
+            margin: 0 auto;
+            width: 8px;
+            height: 250px;
+        }
+
+        .history-point {
+            width: $history-line-point-size;
+            height: $history-line-point-size;
+            margin-top: -2px;
+            border-radius: 50%;
+        }
+
+        &.gray-line {
+            margin: 0 auto;
+            opacity: 0.3;
+
+            .history-line {
+                background-color: $green;
+            }
+
+            .history-point {
+                background-color: $green;
+            }
+        }
+
+        &.green-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            overflow: hidden;
+            height: 10px;
+            max-height: 300px;
+            transform: translateX(-50%);
+
+            .history-line {
+                background-color: $green;
+            }
+
+            .history-point {
+                background-color: $green;
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        .history-line-inner-wrapper {
+            &.gray-line {
+                display: none;
+            }
+
+            &.green-line {
+                position: static;
+                height: auto;
+                margin: 0 auto;
+                transform: none;
+
+                .history-line {
+                    height: 100px;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .history-line-inner-wrapper {
+            width: $history-line-point-size / 1.5;
+            height: $history-line-point-size / 1.5;
+
+            .history-line {
+                width: 6px;
+            }
+
+            .history-point {
+                width: $history-line-point-size / 1.5;
+                height: $history-line-point-size / 1.5;
+            }
+        }
+    }
+}

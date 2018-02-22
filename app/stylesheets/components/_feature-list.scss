@@ -1,0 +1,110 @@
+.feature-list {
+    position: absolute;
+    top: 50%;
+    right: 9%;
+    z-index: 5;
+    text-align: left;
+    transform: translateY(-50%);
+
+    &.feature-list-06 {
+        right: 5%;
+    }
+
+    &.left {
+        right: auto;
+        left: 11%;
+    }
+
+    .feature-list-arrow {
+        display: block;
+        width: 60px;
+        margin-left: auto;
+        margin-right: auto;
+
+        &.arrow-top {
+            margin-bottom: 30px;
+        }
+
+        &.arrow-bottom {
+            margin-top: 30px;
+        }
+    }
+
+    h4 {
+        margin-bottom: 10px;
+        font-size: rem(21);
+        letter-spacing: normal;
+    }
+
+    ul ~ h4 {
+        margin-top: 30px;
+    }
+
+    li, .feature-item {
+        line-height: 1;
+
+        a {
+            display: block;
+            padding: 13px 0;
+            font-size: rem(11);
+            line-height: 1;
+            text-transform: uppercase;
+            color: #7f7f7f;
+            transition-property: color;
+            transition-duration: 0.3s;
+
+            &:hover, &.active {
+                color: #7c7644;
+            }
+        }
+
+        &::before, &:last-child::after {
+            content: '';
+            display: block;
+            height: 1px;
+            margin: 0 -25px;
+            background-color: #000;
+            background: linear-gradient(to right, transparent, #979ba0 20%, #979ba0 80%, transparent 100%);
+        }
+    }
+
+    &.white {
+        top: 50%;
+        left: 5%;
+        right: auto;
+
+        h4 {
+            color: #fff;
+        }
+
+        li {
+            a {
+                color: #fff;
+
+                &:hover, &.js-tab-link-active {
+                    color: #7c7644;
+                }
+            }
+
+            &::before, &:last-child::after {
+                background: linear-gradient(to right, transparent, #fff 20%, #fff 80%, transparent 100%);
+            }
+        }
+    }
+
+    @media (min-height: 1350px) {
+        right: 15%;
+
+        &.left {
+            left: 15%;
+        }
+    }
+
+    @media (max-height: 850px) {
+        li {
+            a {
+                padding: 8px 0;
+            }
+        }
+    }
+}

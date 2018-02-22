@@ -1,0 +1,115 @@
+.heritage-top-banner {
+    position: relative;
+    height: 80vh;
+    margin-bottom: 46px;
+    background-size: auto 100%;
+    background-position: 100% 50%;
+
+    .heritage-top-banner-header {
+        float: right;
+        max-width: 900px;
+        width: 50%;
+        padding-top: 25vh;
+        padding-right: 55px;
+        text-align: right;
+
+        h3 {
+            font-size: rem(27px);
+            letter-spacing: rem(5px);
+            color: #000;
+        }
+    }
+
+    .heritage-cars-img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        max-width: inherit;
+        width: auto;
+        height: 100%;
+    }
+
+    .arrow-down {
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -39px;
+        transform: translateY(50%);
+        animation-name: arrow-down-animation;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+
+    .scroll-history {
+        position: absolute;
+        bottom: 55px;
+        width: 100%;
+        font-size: rem(28);
+        text-align: center;
+        letter-spacing: rem(7px);
+        color: #fff;
+    }
+
+    @include breakpoint(medium) {
+        .heritage-top-banner-header {
+            h3 {
+                font-size: rem(20px);
+                letter-spacing: rem(3px);
+            }
+        }
+
+        .scroll-history {
+            font-size: rem(20px);
+            text-align: center;
+            letter-spacing: rem(3px);
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        height: 100vh;
+        margin-bottom: 15px;
+
+        .heritage-top-banner-header {
+            float: none;
+            width: 80%;
+            margin: 0 auto;
+            padding-right: 0;
+            text-align: center;
+
+            h3 {
+                font-size: rem(15px);
+                letter-spacing: 1px;
+            }
+        }
+
+        .scroll-history {
+            bottom: 25px;
+            padding: 0 10%;
+            font-size: rem(15px);
+            letter-spacing: 1px;
+            box-sizing: border-box;
+        }
+
+        .arrow-down {
+            display: none;
+        }
+    }
+}
+
+@keyframes arrow-down-animation {
+    0% {
+        transform: translateY(40%);
+    }
+
+    50% {
+        transform: translateY(60%);
+    }
+
+    100% {
+        transform: translateY(40%);
+    }
+}

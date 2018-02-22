@@ -1,0 +1,12 @@
+.standart-header {
+    padding: 45px 0;
+    text-align: center;
+
+    h2 {
+        color: #333;
+    }
+
+    @include breakpoint(small) {
+        padding-bottom: 25px;
+    }
+}

@@ -1,0 +1,149 @@
+.contact-card {
+    background-color: #fff;
+    margin: 0 15px;
+    padding: 30px;
+    width: 600px;
+
+    .contact-card-header {
+        position: relative;
+        min-height: 60px;
+        margin-bottom: 18px;
+
+        h3 {
+            font-family: $pn-black;
+            font-size: rem(24px);
+            letter-spacing: normal;
+            line-height: 1;
+        }
+
+        p {
+            font-family: $pn-semibold;
+            font-size: rem(12px);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            bottom: 0;
+            display: block;
+            height: 0;
+            width: 160px;
+            border-bottom: 2px solid $green;
+        }
+    }
+
+    .simpe-contact-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        li:nth-child(2n+1) {
+            width: 60%;
+        }
+
+        li:nth-child(2n) {
+            width: 40%;
+        }
+
+        li, a {
+            letter-spacing: normal;
+            font-size: rem(12px);
+            color: $green;
+        }
+
+        li > * {
+            padding: 8px 0;
+        }
+
+        li:nth-last-child(1) > *, li:nth-last-child(2) > * {
+            padding-bottom: 0;
+        }
+
+        li:nth-child(1) > *, li:nth-child(2) > * {
+            padding-top: 0;
+        }
+
+        .fa {
+            margin-right: 10px;
+        }
+    }
+
+    @media (max-height: 900px) {
+        width: 580px;
+        padding: 20px;
+
+        .simpe-contact-list {
+            li > * {
+                padding: 4px 0;
+            }
+
+            li:nth-last-child(1) > *, li:nth-last-child(2) > * {
+                padding-bottom: 0;
+            }
+
+            li:nth-child(1) > *, li:nth-child(2) > * {
+                padding-top: 0;
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+
+    @include breakpoint(small) {
+        .contact-card-header {
+            h3 {
+                font-size: rem(20);
+            }
+        }
+
+        h3 {
+            font-size: rem(20);
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 500px;
+
+        .simpe-contact-list {
+            li {
+                width: 100% !important;
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        padding: 15px;
+
+        .contact-card-header {
+            min-height: 40px;
+
+            h3 {
+                font-size: rem(17px);
+            }
+
+            p {
+                font-size: rem(12px);
+                letter-spacing: normal;
+            }
+        }
+
+        .simpe-contact-list {
+            li, a {
+                font-size: rem(11px);
+            }
+        }
+    }
+}

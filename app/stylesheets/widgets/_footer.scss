@@ -1,0 +1,43 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 200;
+    width: 100%;
+    background-color: #f8f8f8;
+    transition-duration: 0.4s;
+    transition-property: transform;
+
+    @include breakpoint(medium) {
+        position: static;
+    }
+
+
+    @include breakpoint(no-mobile) {
+        &.hidden-footer {
+            transform: translateY(250px);
+
+            &.visible {
+                transform: translateY(175px);
+
+                &:hover {
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        &.animated-footer {
+            transform: translateY(175px);
+
+            &:hover {
+                transform: translateY(0);
+            }
+        }
+    }
+
+
+    @include breakpoint(medium) {
+        &.animated-footer {
+            transform: translateY(0);
+        }
+    }
+}

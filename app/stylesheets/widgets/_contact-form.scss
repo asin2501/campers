@@ -1,0 +1,145 @@
+.contact-form {
+    width: 740px;
+    margin: 0 15px;
+    padding: 24px;
+    background-color: #fff;
+
+    h3 {
+        margin-bottom: 46px;
+        font-family: $pn-black;
+        font-size: rem(24px);
+        line-height: 1;
+        letter-spacing: normal;
+    }
+
+    .main-form {
+        .inner-wrapper-form {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+
+            .customer-data {
+                align-self: flex-end;
+                width: 46%;
+                padding-right: 30px;
+
+                .input-data {
+                    &:not(:last-child) {
+                        margin-bottom: 28px;
+                    }
+                }
+            }
+        }
+
+        .message {
+            width: 54%;
+            max-height: 184px;
+            padding: 13px 22px;
+            border: 1px solid #bdbdbd;
+            resize: none;
+        }
+    }
+
+    .footer-form {
+        .components-right {
+            justify-content: space-between;
+            float: right;
+            width: 54%;
+
+            .button-form {
+                float: right;
+                padding-right: 55px;
+                padding-left: 55px;
+                background-color: #fff;
+
+                &:hover {
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(large) {
+        width: 600px;
+    }
+
+
+    @include breakpoint(medium) {
+        width: auto;
+
+        .main-form {
+            .inner-wrapper-form {
+                .customer-data {
+                    width: 50%;
+                    padding-right: 20px;
+                }
+
+                .message {
+                    width: 50%;
+                }
+            }
+        }
+
+        .footer-form {
+            .components-right {
+                float: none;
+                width: auto;
+                text-align: center;
+
+                .button-form {
+                    float: none;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(small) {
+        width: auto;
+
+        h3 {
+            font-size: rem(20px);
+        }
+
+        .main-form {
+            .inner-wrapper-form {
+                flex-wrap: wrap;
+
+                .customer-data {
+                    width: 100%;
+                    margin-bottom: 30px;
+                    padding-right: 0;
+                }
+
+                .message {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        max-width: 550px;
+        margin: auto;
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        max-width: none;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+
+    @include breakpoint(mobile) {
+        .footer-form {
+            .components-right {
+                .button-form {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

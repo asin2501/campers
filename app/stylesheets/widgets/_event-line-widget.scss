@@ -1,0 +1,61 @@
+.event-line-wrapper {
+    padding: 35px 0;
+    background-color: $bg-gray;
+
+    .event-line-widget {
+        display: flex;
+
+        .event-label, .event-button {
+            padding: 0 10px;
+            background-color: $green;
+            font-size: rem(16);
+            font-family: $pn-black;
+            line-height: 38px;
+            text-transform: uppercase;
+            color: #fff;
+
+            .fa {
+                margin-right: 5px;
+            }
+        }
+
+        .event-label {
+            min-width: 160px;
+        }
+
+        .event-name {
+            overflow: hidden;
+            padding: 0 15px;
+            background-color: #fff;
+            font-size: rem(14);
+            line-height: 38px;
+            text-overflow: ellipsis;
+            letter-spacing: normal;
+            white-space: nowrap;
+        }
+    }
+
+    @include breakpoint(medium) {
+        padding-top: 65px;
+        padding-bottom: 20px;
+    }
+
+
+    @include breakpoint(small) {
+        .event-line-widget {
+            justify-content: center;
+        }
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        .event-line-widget {
+            flex-direction: column;
+            text-align: center;
+
+            .event-label {
+                background-color: transparent;
+            }
+        }
+    }
+}

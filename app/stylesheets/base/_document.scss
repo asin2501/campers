@@ -1,0 +1,18 @@
+body {
+    overflow-x: hidden;
+
+    //overflow-y: auto !important;
+}
+
+@include breakpoint(no-mobile) {
+    body.x1-page, body.lc79-page, body.lc200-page {
+        overflow: hidden;
+    }
+}
+
+
+.clear-fix::before, .clear-fix::after {
+    content: '';
+    display: block;
+    clear: both;
+}

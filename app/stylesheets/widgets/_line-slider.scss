@@ -1,0 +1,120 @@
+.line-slider {
+    position: relative;
+    padding: 0 120px;
+
+    .background {
+        background-size: cover;
+        background-position: 50% 50%;
+
+        img {
+            display: none;
+        }
+    }
+
+    .line-slide {
+        display: block;
+        padding-top: 3.5vh;
+        padding-bottom: 3.5vh;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        .background {
+            height: 28vh;
+            position: relative;
+        }
+    }
+
+    .line-arrow {
+        width: 40px;
+        height: 71px;
+        background-size: contain;
+
+        &.prev {
+            background-image: url("../images/arrow-black-left.png");
+            left: 50px;
+        }
+
+        &.next {
+            background-image: url("../images/arrow-black-right.png");
+            right: 50px;
+        }
+    }
+
+    @media (max-height: 900px) {
+        padding: 0 70px;
+
+        .line-slide {
+            padding-top: 4.5vh;
+            padding-bottom: 4.5vh;
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+
+        .line-arrow {
+            &.prev {
+                left: 20px;
+            }
+
+            &.next {
+                right: 20px;
+            }
+        }
+    }
+
+    @include breakpoint(small) {
+        padding: 0 80px;
+
+        .line-slide {
+            padding-top: 30px;
+            padding-right: 5px;
+            padding-bottom: 30px;
+            padding-left: 5px;
+
+            .background {
+                position: relative;
+                height: 300px;
+            }
+        }
+
+        .line-arrow {
+            top: 0;
+            bottom: 0;
+            width: 60px;
+            height: auto;
+            margin-top: 0;
+            background-size: 50%;
+            background-position: center;
+            transform: none;
+
+            &.prev {
+                left: 10px;
+            }
+
+            &.next {
+                right: 10px;
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        .line-slide {
+            height: 300px;
+        }
+
+        padding: 0 50px;
+
+        .line-arrow {
+            width: 30px;
+            background-size: 70%;
+
+            &.prev {
+                left: 15px;
+            }
+
+            &.next {
+                right: 15px;
+            }
+        }
+    }
+}

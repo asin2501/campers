@@ -1,0 +1,17 @@
+.tour360-super-tourer {
+    z-index: 0;
+    margin-top: 0;
+    background-color: #fff;
+    height: 170 * 46px;
+
+    .img-block-360 {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+}
+
+@include breakpoint(medium) {
+    .tour360-super-tourer {
+        height: auto;
+    }
+}

@@ -1,0 +1,146 @@
+.overview-tech-spec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: $pn-medium;
+    text-transform: uppercase;
+
+    .inner-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 70vh;
+    }
+
+    .spec-row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        h4 {
+            width: 100%;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #fff;
+            font-size: rem(19);
+            font-family: $pn-black;
+        }
+    }
+
+    .spec-cell {
+        width: 25%;
+        line-height: 1;
+
+        .value {
+            margin-bottom: 8px;
+            font-size: rem(15);
+            line-height: 1;
+
+            .number {
+                font-size: rem(31);
+            }
+
+            .times {
+                font-size: rem(31);
+                margin: 0 5px;
+            }
+        }
+
+        .caption {
+            font-size: rem(8.5);
+            line-height: 1.2;
+        }
+
+        .material {
+            font-size: rem(14);
+        }
+
+        &.spec-cell-inline {
+            width: 50%;
+            padding-bottom: 10px;
+            padding-right: 10px;
+
+            &::before {
+                width: auto;
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    @media (min-height: 1200px) {
+        .inner-wrapper {
+            height: 700px;
+        }
+    }
+
+    @include breakpoint(large) {
+        .spec-row {
+            h4 {
+                margin-bottom: 10px;
+                font-size: rem(18);
+            }
+        }
+
+        .spec-cell {
+            &::before {
+                margin-bottom: 5px;
+            }
+
+            .value {
+                margin-bottom: 2px;
+
+                .number {
+                    font-size: rem(26);
+                }
+
+                .times {
+                    margin: 0 3px;
+                    font-size: rem(26);
+                }
+            }
+
+            .material {
+                font-size: rem(12);
+            }
+        }
+    }
+
+
+    @include breakpoint(small) {
+        .inner-wrapper {
+            height: 550px;
+        }
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        .inner-wrapper {
+            height: auto;
+        }
+
+        .spec-row {
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .spec-cell {
+            padding-right: 10px;
+
+            .value {
+                font-size: rem(12);
+
+                .number {
+                    font-size: rem(20);
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        .spec-cell .value .number {
+            font-size: rem(22px);
+        }
+    }
+}

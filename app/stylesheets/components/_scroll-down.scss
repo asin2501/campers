@@ -1,0 +1,79 @@
+.scroll-down {
+    position: absolute;
+    display: block;
+    width: 52px;
+    left: 50%;
+    bottom: 15px;
+    height: 52px;
+    margin-left: -26px;
+    background-position: 50% 50%;
+    background-size: contain;
+    background-image: url("../images/down-button.png");
+
+    &.small {
+        z-index: 100;
+        bottom: 10px;
+        height: 30px;
+        width: 30px;
+        margin-left: -15px;
+
+        &::before {
+            width: 38px;
+            height: 38px;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        transform-origin: 50% 50%;
+        border: 1px solid #000;
+        opacity: 0;
+        transition-property: opacity, transform;
+        transition-duration: 0.3s;
+        transform: scale(1.8);
+        box-sizing: border-box;
+    }
+
+    &:hover {
+        &::before {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @include breakpoint(large) {
+        width: 34px;
+        height: 34px;
+        margin-left: -17px;
+
+        &::before {
+            top: -4px;
+            left: -4px;
+            width: 42px;
+            height: 42px;
+        }
+    }
+
+
+    @media (min-height: 1300px) {
+        bottom: 30px;
+    }
+
+    @include breakpoint(medium) {
+        &::before {
+            display: none;
+        }
+    }
+
+
+    @include breakpoint(medium) {
+        display: none;
+    }
+}

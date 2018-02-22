@@ -1,0 +1,6 @@
+@mixin gradient-line($color: #7f7f7f) {
+    display: block;
+    height: 1px;
+    background-color: #000;
+    background: linear-gradient(to right, transparent, $color 40%, $color 60%, transparent 100%);
+}

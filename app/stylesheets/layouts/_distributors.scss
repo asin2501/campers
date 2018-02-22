@@ -1,0 +1,48 @@
+.distributors {
+    .distributors-section {
+        height: 50vh;
+        position: relative;
+
+        @include background-component($url: "../images/big-bg/distributors.jpg");
+    }
+
+    @media (max-height: 900px) {
+        .contacts {
+            .contacts-content {
+                margin-top: 20px;
+            }
+
+            .contact-header {
+                margin-bottom: 20px;
+
+                h2 {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        .contacts {
+            height: auto;
+        }
+
+        .distributors-section {
+            height: 70vh;
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .distributors-section {
+            height: 100vh;
+        }
+    }
+
+
+    @include breakpoint(full-mobile-landscape) {
+        .distributors-section {
+            height: 200vh;
+        }
+    }
+}

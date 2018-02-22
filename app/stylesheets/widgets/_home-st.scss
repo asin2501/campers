@@ -1,0 +1,174 @@
+.home-st {
+    padding-bottom: 50px;
+    background-image: url("../images/homepage/bg-mount-and-road.png");
+    background-position: bottom center;
+
+    //background-size: auto 60%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+
+    .home-st-slider {
+        margin-top: 20px;
+    }
+
+    .home-st-slide {
+        position: relative;
+
+        .home-st-logo {
+            position: absolute;
+            left: 20%;
+        }
+
+        .home-st-car {
+            margin-left: auto;
+        }
+
+        &:first-of-type {
+            .home-st-logo {
+                right: 20%;
+                left: auto;
+            }
+
+            .home-st-car {
+                margin-right: auto;
+                margin-left: 0;
+            }
+        }
+    }
+
+    @include breakpoint(large) {
+        background-size: auto 60%;
+    }
+
+
+    @include breakpoint(small) {
+        padding-bottom: 30px;
+
+        .home-st-slide {
+            .home-st-logo {
+                position: static;
+                margin: 0 auto;
+                max-width: 50%;
+            }
+
+            .home-st-car {
+                margin: 0 auto;
+            }
+        }
+
+        .slick-arrow.standart-arrow {
+            height: 80px;
+            width: 30px;
+
+            &.slick-prev {
+                left: 0;
+            }
+
+            &.slick-next {
+                right: 0;
+            }
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .slick-arrow.standart-arrow {
+            height: 50px;
+            width: 20px;
+            top: 0;
+            transform: none;
+
+            &.slick-prev {
+                left: 10px;
+            }
+
+            &.slick-next {
+                right: 10px;
+            }
+        }
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        h6 {
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+@include breakpoint(no-mobile) {
+    .home-st {
+        .standart-header {
+            opacity: 0;
+            transform: translateY(-80px);
+            transition-property: opacity, transform;
+            transition-duration: 0.8s;
+            transition-delay: 1s;
+        }
+
+        .home-st-slider {
+            .slick-slide {
+                .home-st-car {
+                    opacity: 0;
+                    transition-property: opacity, transform;
+                    transition-duration: 0.5s;
+                }
+
+                &:nth-child(1) {
+                    .home-st-car {
+                        transform: translateX(-100px);
+                    }
+                }
+
+                &:nth-child(2) {
+                    .home-st-car {
+                        transform: translateX(100px);
+                    }
+                }
+
+                .home-st-logo {
+                    opacity: 0;
+                    transition-duration: 1s;
+                    transition-property: opacity;
+                    transition-delay: 0.5s;
+                }
+            }
+        }
+
+        .button {
+            opacity: 0;
+            transform: translateY(60px);
+            transition-property: opacity, transform;
+            transition-duration: 0.8s;
+            transition-delay: 1.4s;
+        }
+
+        &.animation {
+            .standart-header {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .home-st-slider {
+                .slick-slide {
+                    .home-st-car {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+
+                .home-st-logo {
+                    opacity: 1;
+                }
+            }
+
+            .button {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}

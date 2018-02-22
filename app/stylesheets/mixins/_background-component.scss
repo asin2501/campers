@@ -1,0 +1,6 @@
+@mixin background-component($url: none, $positionX: 50%, $positionY: 50%, $size: cover) {
+    background-image: url($url);
+    background-position: $positionX $positionY;
+    background-repeat: no-repeat;
+    background-size: $size;
+}

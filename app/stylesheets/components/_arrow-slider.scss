@@ -1,0 +1,62 @@
+.arrow-slider {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    width: 35px;
+    height: 66px;
+    margin-top: -33px;
+    border: none;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.arrow-gray-left {
+        left: 30px;
+        background-image: url("../images/arrow-left.png");
+    }
+
+    &.arrow-gray-right {
+        right: 30px;
+        background-image: url("../images/arrow-right.png");
+    }
+
+    &.arrow-white-left {
+        background-image: url("../images/arrow-white-left.png");
+    }
+
+    &.arrow-white-right {
+        background-image: url("../images/arrow-white-right.png");
+    }
+
+    &.arrow-green-left, &.arrow-green-right {
+        transition-property: transform;
+        transition-duration: 0.8s;
+        transition-timing-function: ease-out;
+    }
+
+    &.arrow-green-left {
+        background-image: url("../images/arrow-green-left.png");
+        left: 15%;
+
+        @include breakpoint(no-mobile) {
+            &.hidden {
+                transform: translateX(-600px);
+            }
+        }
+    }
+
+    &.arrow-green-right {
+        background-image: url("../images/arrow-green-right.png");
+        right: 15%;
+
+        @include breakpoint(no-mobile) {
+            &.hidden {
+                transform: translateX(600px);
+            }
+        }
+    }
+}

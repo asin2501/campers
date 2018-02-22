@@ -1,0 +1,9 @@
+.tab-hidden-element {
+    .js-tab-content {
+        display: none !important;
+    }
+
+    .js-tab-active {
+        display: block !important;
+    }
+}

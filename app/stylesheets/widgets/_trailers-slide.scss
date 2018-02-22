@@ -1,0 +1,114 @@
+$animation-duration: 1.2s;
+
+.trailers-slide {
+    text-transform: uppercase;
+
+    .trailer-picture {
+        width: 600px;
+        margin-top: 20px;
+        margin-right: auto;
+        margin-left: auto;
+        transition-duration: $animation-duration;
+        transition-property: opacity;
+    }
+
+    .product-header {
+        position: relative;
+        z-index: 1;
+    }
+
+    @include breakpoint(no-mobile) {
+        transform: scale(0.7) translateZ(0);
+        transition-duration: $animation-duration;
+        transition-property: transform;
+
+        &.hide-right {
+            transform: translateX(100%);
+        }
+
+        &.hide-left {
+            transform: translateX(-100%);
+        }
+
+        .trailer-picture {
+            opacity: 0.2;
+        }
+
+        &.slick-center {
+            will-change: transform;
+            transform: scale(1) translateZ(0);
+
+            &.hide-bottom {
+                transform: translateY(100%);
+            }
+
+            .product-header {
+                opacity: 1;
+            }
+
+            .trailer-picture {
+                opacity: 1;
+                will-change: opacity;
+            }
+        }
+    }
+
+
+    @media (min-height: 1200px) {
+        .trailer-picture {
+            width: 80%;
+        }
+    }
+
+    @media (min-height: 1400px) {
+        .trailer-picture {
+            width: 95%;
+        }
+    }
+
+    @media (max-height: 900px) and (min-width: 1199px) {
+        .product-header {
+            .product-logo {
+                height: 34px;
+                margin-bottom: 10px;
+            }
+
+            .product-links {
+                a {
+                    padding: 7px 0;
+                }
+            }
+        }
+
+        .trailer-picture {
+            width: 75%;
+        }
+    }
+
+    @media (max-height: 800px) and (min-width: 1199px) {
+        .product-header {
+            .product-logo {
+                height: 23px;
+                margin-bottom: 4px;
+            }
+        }
+
+        .trailer-picture {
+            width: 60%;
+        }
+    }
+
+    @include breakpoint(medium) {
+        .trailer-picture {
+            max-width: 450px;
+            width: 100%;
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        .trailer-picture {
+            width: 90%;
+        }
+    }
+}

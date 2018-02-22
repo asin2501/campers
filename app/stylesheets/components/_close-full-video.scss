@@ -1,0 +1,15 @@
+.close-full-video {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 37px;
+    height: 37px;
+    background-image: url("../images/white-cross.png");
+
+    @include breakpoint(small) {
+        top: 25px;
+        width: 25px;
+        height: 25px;
+        background-size: contain;
+    }
+}

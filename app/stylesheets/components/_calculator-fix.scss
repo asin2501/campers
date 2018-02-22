@@ -1,0 +1,9 @@
+.flcButBottomRight {
+    display: none;
+}
+
+.tbox {
+    position: fixed !important;
+    top: calc(50% + 130px) !important;
+    transform: translateY(-50%);
+}

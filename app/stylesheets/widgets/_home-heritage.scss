@@ -1,0 +1,298 @@
+$home-heritage-time-coef: 0.8;
+
+.home-heritage {
+    color: #fff;
+    padding: 100px 0;
+    background-color: $bg-gray;
+
+    .standart-container {
+        position: relative;
+    }
+
+    h3 {
+        margin-bottom: 20px;
+    }
+
+    h6 {
+        margin-bottom: 30px;
+    }
+
+    .timeline {
+        position: absolute;
+        top: 50px;
+        left: 480px;
+        right: 120px;
+
+        & :first-child {
+            position: relative;
+            z-index: 1;
+        }
+
+        & > *:not(:first-child) {
+            position: absolute;
+        }
+
+        .elem1 {
+            top: -50px;
+            left: -27%;
+        }
+
+        .elem2 {
+            top: -75px;
+            left: 14%;
+        }
+
+        .elem3 {
+            left: 48%;
+            top: -75px;
+        }
+
+        .elem4 {
+            left: 88%;
+            top: -65px;
+        }
+
+        .elem5 {
+            left: 60%;
+            top: 25px;
+        }
+
+        .elem6 {
+            left: 10%;
+            top: 15px;
+        }
+
+        .elem7 {
+            left: 6%;
+            top: -125px;
+        }
+
+        .elem8 {
+            top: 120px;
+            left: 35%;
+        }
+
+        .elem9 {
+            top: -125px;
+            left: 61%;
+        }
+
+        .elem10 {
+            top: 120px;
+            left: 78%;
+        }
+    }
+
+    .year {
+        color: #232420;
+        font-size: 48px;
+        font-family: $pn-black;
+    }
+
+    @include breakpoint(medium) {
+        padding-bottom: 180px;
+        padding-top: 60px;
+        text-align: center;
+
+        .timeline {
+            position: relative;
+            top: 0;
+            right: 0;
+            left: 0;
+            max-width: 550px;
+            min-width: 500px;
+            margin: 0 auto;
+            margin-top: 150px;
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        padding-bottom: 800px;
+        overflow-x: hidden;
+
+        .timeline {
+            position: absolute;
+            left: 50%;
+            transform-origin: 50% 50%;
+            transform: translateX(-50%) rotate(90deg);
+            top: 420px;
+
+            & > *:not(:first-child) {
+                transform: rotate(-90deg);
+                transform-origin: 50% 50%;
+            }
+
+            .elem2 {
+                top: -94px;
+                left: 14%;
+            }
+
+            .elem3 {
+                left: 48%;
+                top: -100px;
+            }
+
+            .elem4 {
+                left: 93%;
+                top: -65px;
+            }
+
+            .elem5 {
+                left: 60%;
+                top: 39px;
+            }
+
+            .elem7 {
+                left: 1%;
+                top: -100px;
+            }
+
+            .elem8 {
+                top: 70px;
+                left: 40%;
+            }
+
+            .elem9 {
+                top: -100px;
+                left: 63%;
+            }
+
+            .elem10 {
+                top: 70px;
+                left: 82%;
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        h6 {
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+@include breakpoint(no-mobile) {
+    .home-heritage {
+        h3, h6, .button {
+            opacity: 0;
+            transform: translateX(-150px);
+            transition-property: opacity, transform;
+            transition-duration: 0.6s * $home-heritage-time-coef;
+        }
+
+        h6 {
+            transition-delay: 0.3s * $home-heritage-time-coef;
+        }
+
+        .button {
+            transition-delay: 0.6s * $home-heritage-time-coef;
+        }
+
+        .elem0 {
+            opacity: 0;
+            transition-duration: 1s * $home-heritage-time-coef;
+            transition-delay: 0.6s * $home-heritage-time-coef;
+        }
+
+        .timeline > * {
+            opacity: 0;
+            transition-duration: 1s * $home-heritage-time-coef;
+            transition-property: opacity, transform;
+        }
+
+        .elem1 {
+            transform: translateX(-100px) rotate(-200deg) scale(0.6);
+        }
+
+        .elem2 {
+            transform: translateX(-100px) translateY(-50px) rotate(200deg) scale(0.6);
+        }
+
+        .elem3 {
+            transform: translateY(-100px) scale(0.5);
+        }
+
+        .elem4 {
+            transform: translateX(200px) translateY(50px) rotate(200deg) scale(0.5);
+        }
+
+        .elem5 {
+            transform: translateX(300px) rotate(400deg) scale(0.4);
+        }
+
+        .elem6 {
+            transform: translateY(100px) scale(0.4);
+        }
+
+        .elem7 {
+            transform: translateY(-50px);
+        }
+
+        .elem8 {
+            transform: translateY(50px);
+        }
+
+        .elem9 {
+            transform: translateY(-50px);
+        }
+
+        .elem10 {
+            transform: translateY(50px);
+        }
+
+        .elem1 {
+            transition-delay: 0.5s * $home-heritage-time-coef;
+        }
+
+        .elem2 {
+            transition-delay: 1s * $home-heritage-time-coef;
+        }
+
+        .elem3 {
+            transition-delay: 1.2s * $home-heritage-time-coef;
+        }
+
+        .elem4 {
+            transition-delay: 1.5s * $home-heritage-time-coef;
+        }
+
+        .elem5 {
+            transition-delay: 2s * $home-heritage-time-coef;
+        }
+
+        .elem6 {
+            transition-delay: 1.6s * $home-heritage-time-coef;
+        }
+
+        .elem7, .elem8, .elem9, .elem10 {
+            transition-duration: 0.7s * $home-heritage-time-coef;
+        }
+
+        .elem7 {
+            transition-delay: 2.2s * $home-heritage-time-coef;
+        }
+
+        .elem8 {
+            transition-delay: 2.4s * $home-heritage-time-coef;
+        }
+
+        .elem9 {
+            transition-delay: 2.8s * $home-heritage-time-coef;
+        }
+
+        .elem10 {
+            transition-delay: 3s * $home-heritage-time-coef;
+        }
+
+        &.animation {
+            .elem5, .elem4, .elem2, .elem3, .elem6, .elem1, .elem0, h3, h6, .button, .elem7, .elem8, .elem9, .elem10 {
+                opacity: 1;
+                transform: translateX(0) rotate(0) scale(1);
+            }
+        }
+    }
+}

@@ -1,0 +1,141 @@
+body {
+    color: $base-font-color;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    letter-spacing: rem(1);
+
+    @include breakpoint(extra-large) {
+        font-size: $base-font-size * 0.85;
+    }
+}
+
+:focus {
+    outline: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font-family;
+    line-height: $heading-line-height;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+h2 {
+    font-size: rem(35);
+    letter-spacing: rem(8);
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+    @include breakpoint(extra-large) {
+        font-size: rem(30);
+        letter-spacing: rem(5);
+    }
+
+
+    @include breakpoint(medium) {
+        font-size: rem(27);
+        letter-spacing: rem(4);
+    }
+
+
+    @include breakpoint(extra-small) {
+        font-size: rem(25);
+        letter-spacing: rem(3);
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        font-size: rem(23);
+        letter-spacing: rem(2);
+    }
+
+
+    @include breakpoint(mobile) {
+        font-size: rem(23);
+        letter-spacing: rem(1);
+    }
+
+
+    &.big-title {
+        font-size: rem(54);
+        text-align: center;
+
+        @include breakpoint(extra-large) {
+            font-size: rem(44);
+        }
+
+
+        @include breakpoint(medium) {
+            .range-title {
+                font-size: rem(34);
+            }
+        }
+
+
+        @include breakpoint(mobile-landscape) {
+            font-size: rem(24);
+        }
+    }
+}
+
+h3 {
+    font-size: rem(29);
+    letter-spacing: rem(6);
+}
+
+h4 {
+    font-size: rem(21);
+    letter-spacing: rem(3);
+
+    @include breakpoint(medium) {
+        font-size: rem(19);
+        letter-spacing: rem(4);
+    }
+
+
+    @include breakpoint(extra-small) {
+        font-size: rem(17);
+        letter-spacing: rem(3);
+    }
+
+
+    @include breakpoint(mobile) {
+        font-size: rem(16);
+        letter-spacing: rem(2);
+    }
+}
+
+h5 {
+    font-size: rem(18);
+}
+
+h6 {
+    font-size: rem(13);
+    letter-spacing: rem(2.5);
+}
+
+p {
+    margin: 0 0;
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+    line-height: 1.4;
+
+    &:active,
+    &:focus,
+    &:hover {
+        color: $text-color;
+    }
+}
+
+address {
+    font-style: normal;
+}

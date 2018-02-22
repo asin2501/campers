@@ -1,0 +1,198 @@
+.event-item {
+    position: relative;
+    background-color: #FFF;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 12px;
+    font-family: $pn-semibold;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    &.empty {
+        background-color: transparent;
+    }
+
+    &.hidden {
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin: 0;
+        opacity: 0;
+    }
+
+    &.opened {
+        height: auto !important;
+
+        .event-map-block {
+            display: block;
+        }
+
+        .event-info {
+            display: block;
+        }
+
+        .event-location-link {
+            display: none;
+        }
+
+        .event-date {
+            display: none;
+        }
+    }
+
+    .close-map {
+        display: block;
+        width: 39px;
+        height: 39px;
+        margin-right: 20px;
+        margin-left: auto;
+        margin-bottom: 20px;
+        background-image: url("../images/black-cross.png");
+    }
+
+    .event-map-block {
+        display: none;
+    }
+
+    .event-info {
+        display: none;
+    }
+
+    .event-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120px;
+        padding: 0 10px;
+        background-color: $green;
+        font-size: rem(20);
+        text-align: right;
+        color: #fff;
+    }
+
+    .event-date {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: rem(17);
+        padding-top: 5px;
+        padding-right: 20px;
+    }
+
+    .event-location-link {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+        width: 150px;
+        padding-top: 4px;
+        border-top: 2px solid $green;
+        font-size: rem(12);
+        font-family: $pn-medium;
+        text-align: right;
+        transition-duration: 0.4s;
+        transition-property: width;
+
+        &:hover {
+            width: 250px;
+        }
+    }
+
+    .event-map-block {
+        margin-left: -20px;
+        margin-right: -20px;
+        margin-bottom: 20px;
+
+        .map {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+            border-top: 2px solid $green;
+            border-bottom: 2px solid $green;
+
+            #map {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .event-info, .event-name {
+        text-align: right;
+        font-size: rem(18);
+        letter-spacing: rem(3);
+    }
+
+    .event-name {
+        margin-bottom: 10px;
+        color: $green;
+    }
+
+    @include breakpoint(large) {
+        padding: 50px 20px;
+
+        .event-label {
+            width: 80px;
+            padding: 0 10px;
+            background-color: $green;
+            font-size: rem(18);
+            text-align: right;
+            color: #fff;
+        }
+
+        .event-date {
+            font-size: rem(14);
+        }
+
+        .event-location-link {
+            font-size: rem(10);
+        }
+
+        .event-info, .event-name {
+            font-size: rem(17);
+            letter-spacing: rem(2);
+        }
+    }
+
+
+    @include breakpoint(medium) {
+        padding: 30px 10px;
+
+        .event-date {
+            font-size: rem(12);
+            padding-right: 10px;
+        }
+
+        .event-info, .event-name {
+            font-size: rem(14);
+            letter-spacing: rem(1);
+        }
+
+        .event-map-block {
+            margin-left: -10px;
+            margin-right: -10px;
+            margin-bottom: 20px;
+        }
+    }
+
+
+    @include breakpoint(small) {
+        padding-top: 70px;
+
+        .event-date {
+            top: 40px;
+        }
+
+        .event-info, .event-name {
+            font-size: rem(12);
+        }
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        &.empty {
+            display: none !important;
+        }
+    }
+}

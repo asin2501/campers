@@ -1,0 +1,209 @@
+.lc79-page {
+    .tour360 {
+        .plus-point-group {
+            &.group-02 {
+                .point1 {
+                    bottom: 40%;
+                    left: 51%;
+                }
+
+                .point2 {
+                    bottom: 32%;
+                    left: 37%;
+                }
+
+                .point3 {
+                    bottom: 27%;
+                    left: 66%;
+                }
+
+                .point4 {
+                    bottom: 12%;
+                    left: 49%;
+                }
+
+                .point5 {
+                    bottom: 12%;
+                    left: 59%;
+                }
+
+                .point6 {
+                    bottom: 26%;
+                    left: 42%;
+                }
+
+                .point7 {
+                    bottom: 20%;
+                    left: 75%;
+                }
+
+                .point8 {
+                    bottom: 12%;
+                    left: 57%;
+                }
+
+                .point9 {
+                    bottom: 9%;
+                    left: 23%;
+                }
+
+                .point10 {
+                    bottom: 17%;
+                    left: 21%;
+                }
+
+                .point11 {
+                    bottom: 15%;
+                    left: 20%;
+                }
+
+                .point12 {
+                    bottom: 17%;
+                    left: 25%;
+                }
+
+                .point13 {
+                    bottom: 19%;
+                    left: 32%;
+                }
+            }
+
+            &.group-03 {
+                .point1 {
+                    bottom: 17%;
+                    left: 52%;
+                }
+
+                .point2 {
+                    bottom: 17%;
+                    left: 40%;
+                }
+
+                .point3 {
+                    bottom: 22%;
+                    left: 25%;
+                }
+
+                .point4 {
+                    bottom: 17%;
+                    left: 45%;
+                }
+
+                .point5 {
+                    bottom: 14%;
+                    left: 56%;
+                }
+            }
+
+            &.group-04 {
+                .point1 {
+                    top: 3%;
+                    right: 38%;
+                    bottom: auto;
+                    left: auto;
+                }
+
+                .point2 {
+                    top: 26%;
+                    right: 39%;
+                    bottom: auto;
+                    left: auto;
+                }
+
+                .point3 {
+                    top: 40%;
+                    right: 48%;
+                    bottom: auto;
+                    left: auto;
+                }
+            }
+
+            &.group-06 {
+                .point1 {
+                    left: 39%;
+                    bottom: 32%;
+                }
+
+                .point2 {
+                    left: 45%;
+                    bottom: 49%;
+                }
+            }
+
+            &.group-08 {
+                bottom: 5vh;
+                left: 0;
+                width: 50vw;
+                height: 27vw;
+
+                .point1 {
+                    bottom: 87%;
+                    left: 73%;
+                }
+
+                .point2 {
+                    bottom: 57%;
+                    left: 78%;
+                }
+
+                .point3 {
+                    bottom: 59%;
+                    left: 64%;
+                }
+
+                .point4 {
+                    bottom: 46%;
+                    left: 64%;
+                }
+
+                .point5 {
+                    bottom: 75%;
+                    left: 43%;
+                }
+
+                .point6 {
+                    bottom: 20%;
+                    left: 59%;
+                }
+
+                .point7 {
+                    bottom: 44%;
+                    left: 15%;
+                }
+
+                .point8 {
+                    bottom: 36%;
+                    left: 79%;
+                }
+
+                .point9 {
+                    bottom: 47%;
+                    left: 1%;
+                }
+
+                .point10 {
+                    bottom: 35%;
+                    left: 34%;
+                }
+
+                .point11 {
+                    bottom: 32%;
+                    left: 94%;
+                }
+
+                .point12 {
+                    bottom: 64%;
+                    left: 37%;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        .tour360 {
+            .tour360-inner-block {
+                min-height: inherit;
+            }
+        }
+    }
+}

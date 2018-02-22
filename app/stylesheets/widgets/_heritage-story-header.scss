@@ -1,0 +1,79 @@
+.heritage-story-header {
+    margin-bottom: 140px;
+    text-align: center;
+    color: #000;
+
+    h3 {
+        font-family: $pn-light;
+        font-size: rem(51);
+        line-height: 0.85;
+        letter-spacing: normal;
+    }
+
+    h2 {
+        font-family: $pn-black;
+        font-size: rem(88);
+        line-height: 0.85;
+        letter-spacing: normal;
+    }
+
+    p {
+        position: relative;
+        max-width: 850px;
+        margin: 0 auto;
+        font-family: $pn-black;
+        font-size: rem(26);
+        line-height: 1;
+    }
+
+    .hgroup {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    @include breakpoint(large) {
+        margin-bottom: 80px;
+
+        h3 {
+            font-size: rem(35);
+        }
+
+        h2 {
+            font-size: rem(60);
+        }
+
+        p {
+            font-size: rem(22);
+        }
+    }
+
+
+    @include breakpoint(medium) {
+        max-width: 70%;
+        margin-right: auto;
+        margin-bottom: 50px;
+        margin-left: auto;
+    }
+
+
+    @include breakpoint(extra-small) {
+        max-width: 90%;
+
+        .hgroup {
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: rem(25);
+        }
+
+        h2 {
+            font-size: rem(45);
+            margin: 5px auto;
+        }
+
+        p {
+            font-size: rem(16);
+        }
+    }
+}

@@ -1,0 +1,99 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Product Landing</title>
+        <link rel="stylesheet" href="libs/slick/slick.css">
+        <link rel="stylesheet" href="libs/JBox/jBox.css">
+        <link rel="stylesheet" href="libs/lightbox/lightbox.css">
+        <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body >
+        <div class="container">
+            <header class="header header-shadow" id="header">
+                //= html-template/_top-header.html
+            </header>
+            <nav id="mp-menu" class="mp-menu">
+                <div class="mp-level">
+                    <h2 class="icon icon-world">Main menu</h2>
+                    <ul>
+                         //= html-template/_mobile-menu.html
+                    </ul>
+                </div>
+            </nav>
+            <div class="mp-pusher" id="mp-pusher">
+                <main class="camper-trailers vertical-line" id="animated-camper-trailers">
+                    <div class="camper-trailers-header">
+                        <h2>CAMPER TRAILERS</h2>
+                        <div class="select hidden">
+                            <h6>select</h6>
+                            <div class="button-group" id="trailers-slider-control">
+                                <button class="double-line-button active anventure-tarilers" data-category="anventure-tarilers">ADVENTURE TRAILERS</button>
+                                <button class="double-line-button toy-haulers" data-category="toy-haulers">TOY HAULERS</button>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="camper-main-part">
+                    	<div class="trailers-slider">
+                        <div class="trailers-slide anventure-tarilers hide-bottom" data-category="anventure-tarilers">
+                                <div class="product-header hidden">
+                                    <img class="product-logo" src="images/logo/x1-standart.png" alt="model logo">
+                                    <div class="subscribe">THE CAMPER TRAILER REDEFINED</div>
+                                    <div class="price-line">from <span class="price">34.990</span></div>
+                                    <ul class="product-links">
+                                        <li><a href="x1-standart.html">explore</a></li>
+                                        <li><a href="compare.html?item=x1-standart">compare</a></li>
+                                    </ul>
+                                </div>
+                                <img class="trailer-picture" src="images/camper-trailers/x1-standart.png" alt="">
+                            </div>
+                            <div class="trailers-slide anventure-tarilers hide-right" data-category="anventure-tarilers">
+                                <div class="product-header">
+                                <img class="product-logo" src="images/logo/x1-limited.png" alt="model logo">
+                                    <div class="subscribe">THE CAMPER TRAILER REDEFINED</div>
+                                    <div class="price-line">from <span class="price">40,990</span></div>
+                                    <ul class="product-links">
+                                        <li><a href="x1-le.html">explore</a></li>
+                                        <li><a href="compare.html?item=x1-le">compare</a></li>
+                                    </ul>
+                                </div>
+                                <img class="trailer-picture" src="images/camper-trailers/x1-limited.png" alt="trailer">
+                            </div>
+                            <div class="trailers-slide anventure-tarilers" data-category="anventure-tarilers">
+                                <div class="product-header">
+                                    <img class="product-logo" src="images/logo/x2.png" alt="model logo">
+                                    <div class="subscribe">THE CAMPER TRAILER REDEFINED</div>
+                                    <div class="price-line">from <span class="price">34.990</span></div>
+                                    <ul class="product-links">
+                                        <li><a href="#">explore</a></li>
+                                        <li><a href="compare.html?item=x2">compare</a></li>
+                                    </ul>
+                                </div>
+                                <img class="trailer-picture" src="images/camper-trailers/x2.png" alt="trailer">
+                            </div>
+                             <div class="trailers-slide toy-haulers hide-left"  data-category="toy-haulers">
+                                <div class="product-header">
+                                    <img class="product-logo" src="images/logo/th610.png"" alt="model logo">
+                                    <div class="subscribe">THE CAMPER TRAILER REDEFINED</div>
+                                    <div class="price-line">from <span class="price">34.990</span></div>
+                                    <ul class="product-links">
+                                        <li><a href="#">explore</a></li>
+                                        <li><a href="compare.html?item=th600">compare</a></li>
+                                    </ul>
+                                </div>
+                                <img class="trailer-picture" src="images/camper-trailers/th610.png" alt="trailer">
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer id="footer" class="animated-footer">
+                	//= html-template/_footer-content.html
+                </footer>
+            </div>
+        </div>
+        //= html-template/_scripts.html
+    </body>
+</html>

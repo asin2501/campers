@@ -1,0 +1,13 @@
+.technical-specs {
+    @extend .full-screen-component;
+
+    display: flex;
+    justify-content: flex-end;
+
+    @include background-component("../images/big-bg/bg4.jpg", 0%, 100%);
+
+    h2 {
+        transition-delay: 0.8s;
+        transition-timing-function: linear;
+    }
+}

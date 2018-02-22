@@ -1,0 +1,19 @@
+.slick-arrow.standart-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-size: 0;
+    background-position: 50% 50%;
+
+    &.slick-prev {
+        background-image: url("../images/arrow-black-left.png");
+    }
+
+    &.slick-next {
+        background-image: url("../images/arrow-black-right.png");
+    }
+}

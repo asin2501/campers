@@ -1,0 +1,220 @@
+.events-slider {
+    position: relative;
+    margin-top: 22px;
+    background-color: rgba(255, 255, 255, 0.35);
+
+    a {
+        outline: none;
+    }
+
+    .arrow-slider {
+        top: 0;
+        bottom: 0;
+        height: auto;
+        margin-top: 0;
+        background-position: 50% 50%;
+        background-color: rgba(255, 255, 255, 0.3);
+        transition-property: background-color;
+        transition-duration: 0.4s;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    }
+
+    &.event-opened {
+        .arrow-white-right {
+            width: 90px;
+        }
+
+        .events-slide {
+            padding-right: 100px;
+
+            .events-coll {
+                width: 27%;
+
+                &.active-coll {
+                    width: 46%;
+                }
+            }
+        }
+    }
+
+    .arrow-white-right {
+        right: 0;
+        width: 350px;
+        transition-duration: 0.3s;
+        transition-property: width;
+    }
+
+    .arrow-white-left {
+        left: 0;
+        width: 90px;
+    }
+
+    .events-slide {
+        display: flex;
+        padding-top: 15px;
+        padding-right: 360px;
+        padding-bottom: 10px;
+        padding-left: 100px;
+        transition-duration: 0.3s;
+        transition-property: padding-right;
+        outline: none;
+        box-sizing: border-box;
+
+        .events-coll {
+            position: relative;
+            width: 33.3%;
+            padding: 0 16px;
+            transition-duration: 0.3s;
+            transition-property: width;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0px;
+                width: 2px;
+                background-color: #000;
+                opacity: 0.5;
+
+                @include linear-gradient(top, transparent 0%, #212121 50%, transparent 100%);
+            }
+
+            &:last-child {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0px;
+                    bottom: 0;
+                    width: 2px;
+                    background-color: #000;
+                    opacity: 0.5;
+
+                    @include linear-gradient(top, transparent 0%, #212121 50%, transparent 100%);
+                }
+            }
+
+            h2 {
+                margin: 0;
+                padding-bottom: 30px;
+                text-align: center;
+            }
+        }
+    }
+
+    @include breakpoint(large) {
+        .events-slide {
+            padding-right: 220px;
+        }
+
+        .arrow-white-right {
+            right: 0;
+            width: 210px;
+        }
+    }
+
+
+    @media (min-width: 1930px) {
+        .events-slide {
+            padding-right: 480px;
+            padding-left: 220px;
+
+            .events-coll {
+                padding: 0 26px;
+            }
+        }
+
+        .arrow-white-right {
+            right: 0;
+            width: 450px;
+        }
+
+        .arrow-white-left {
+            left: 0;
+            width: 190px;
+        }
+    }
+
+    @include breakpoint(medium) {
+        .events-slide {
+            .events-coll {
+                h2 {
+                    font-size: rem(20);
+                }
+
+                padding: 0 8px;
+            }
+        }
+    }
+
+
+    @include breakpoint(small) {
+        .events-slide {
+            padding-right: 60px;
+            padding-left: 60px;
+        }
+
+        .arrow-white-right, .arrow-white-left {
+            width: 50px;
+        }
+
+        &.event-opened {
+            .arrow-white-right {
+                width: 50px;
+            }
+
+            .events-slide {
+                padding-right: 60px;
+            }
+        }
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        .events-slide {
+            flex-direction: column;
+
+            .events-coll {
+                width: 100%;
+
+                &::before, &::after {
+                    display: none;
+                }
+
+                h2 {
+                    padding-top: 40px;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+
+        &.event-opened {
+            .events-slide {
+                .events-coll {
+                    width: 100%;
+
+                    &.active-coll {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        .events-slide {
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+
+        .arrow-white-right, .arrow-white-left {
+            width: 25px;
+            background-size: 20px;
+        }
+    }
+}

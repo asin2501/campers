@@ -1,0 +1,216 @@
+.standart-features {
+    @extend .full-screen-component;
+
+    padding-top: 120px;
+    text-align: center;
+    color: #000;
+
+    h5 {
+        margin: 12px 0;
+        font-size: 13px;
+        font-family: $pn-black;
+        text-transform: none;
+    }
+
+    .price {
+        position: relative;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .pictures {
+        position: relative;
+        margin-top: -2vh;
+        margin-bottom: -6vh;
+
+        img {
+            height: 42vh;
+
+            &:nth-child(2) {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0;
+            }
+        }
+    }
+
+    @include breakpoint(no-mobile) {
+        //transform: translateX(-1500px);
+
+        &.animation {
+            .pictures {
+                img:nth-child(2) {
+                    animation-name: standart-feature-opacity-change;
+                    animation-duration: 0.7s;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: ease-in;
+                }
+            }
+        }
+
+        &.reverse-animation {
+            .pictures {
+                img:nth-child(2) {
+                    animation-duration: 0.7s;
+                    animation-name: reverse-standart-feature-opacity-change;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: linear;
+                }
+            }
+        }
+    }
+
+
+    .features-list {
+        position: relative;
+        z-index: 1;
+
+        li {
+            font-size: rem(13px);
+
+            &::before {
+                content: '';
+                display: inline-block;
+                height: 5px;
+                width: 5px;
+                background-color: #000;
+                border-radius: 100px;
+                margin-right: 5px;
+                margin-bottom: 2px;
+            }
+        }
+    }
+
+    @include breakpoint(large) {
+        padding-top: 110px;
+
+        .pictures {
+            margin-top: 0;
+            margin-bottom: -8vh;
+        }
+
+        .price {
+            .from, .number {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+
+    @media (min-height: 1200px) {
+        padding-top: 14vh;
+    }
+
+    @media (min-width: 1199px) and (max-width: 1600px) {
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 0 80px;
+
+            li {
+                padding-left: 0;
+                padding-right: 0;
+                font-size: rem(11px);
+
+                &:not(:last-child) {
+                    &::after {
+                        content: '|';
+                        margin: 0 6px;
+                    }
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        height: auto;
+        padding-top: 60px;
+
+        .pictures {
+            img {
+                display: block;
+                width: 80%;
+                height: auto;
+                margin: 0 auto;
+            }
+        }
+    }
+
+
+    @include breakpoint(small) {
+        .pictures {
+            margin: 0;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        .standart-features-description {
+            padding: 0 20px;
+        }
+
+        .features-list {
+            li {
+                font-size: rem(11);
+            }
+        }
+    }
+}
+
+@keyframes standart-feature-opacity-change {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes reverse-standart-feature-opacity-change {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes standart-feature-move {
+    0% {
+        transform: translateX(1500px);
+    }
+
+    30% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes reverse-standart-feature-move {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-1500px);
+    }
+}

@@ -1,0 +1,61 @@
+.events {
+    min-height: 100vh;
+    padding-top: 90px;
+    padding-bottom: 350px;
+    box-sizing: border-box;
+
+    @include background-component("../images/big-bg/bg3.jpg", 50%, 0, cover);
+
+    .events-header {
+        text-align: center;
+        color: #fff;
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+    }
+
+    .events-season-nav {
+        display: flex;
+        justify-content: center;
+
+        a {
+            margin: 0 60px;
+            border-bottom: 2px solid transparent;
+            font-size: rem(13);
+            font-family: $pn-semibold;
+            color: #fff;
+            transition-property: border-color;
+            transition-duration: 0.3s;
+
+            &.active, &:hover {
+                border-color: #fff;
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        padding-bottom: 50px;
+    }
+
+
+    @include breakpoint(small) {
+        .events-season-nav {
+            a {
+                margin: 0 20px;
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        .events-season-nav {
+            flex-direction: column;
+
+            li {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.top-nav {
+    @extend %header-paddings;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 20px;
+    background-image: url("../images/top-link-bg.jpg");
+
+    .top-nav-link {
+        margin-left: 20px;
+
+        a {
+            display: block;
+            padding: 0 10px;
+            font-size: rem(9);
+            color: $headder-dark-color;
+            letter-spacing: rem(1);
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    @include breakpoint(medium) {
+        display: none;
+    }
+}

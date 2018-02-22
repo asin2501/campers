@@ -1,0 +1,58 @@
+.button {
+    display: inline-block;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-bottom: 8px;
+    padding-left: 30px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    border-color: $green;
+    font-family: $pn-light;
+    font-size: rem(14);
+    text-transform: uppercase;
+    color: $green;
+    transition: 0.3s;
+    box-sizing: border-box;
+
+    &:hover, &.active {
+        background-color: $green;
+        color: #fff;
+    }
+
+    &.green-button {
+        background-color: $green;
+        border-color: $green;
+        color: #fff;
+        transition-duration: 0.3s;
+        transition-property: background;
+
+        &.clarification:hover {
+            background-color: $green + #090909;
+        }
+    }
+
+    &.fluid {
+        width: 100%;
+    }
+
+    &.white {
+        border-color: #fff;
+        border-width: 2px;
+        color: #fff;
+        font-family: $pn-semibold;
+    }
+
+    &.black {
+        border-color: #000;
+        border-width: 2px;
+        color: #000;
+        font-family: $pn-semibold;
+        transition-property: background, color;
+
+        &:hover, &.active {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+}

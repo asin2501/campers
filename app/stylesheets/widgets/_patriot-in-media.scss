@@ -1,0 +1,188 @@
+.patriot-in-media {
+    padding-top: 72px;
+    padding-bottom: 35px;
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 45%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to top, transparent, #ececec);
+    }
+
+    h2 {
+        margin-bottom: 18px;
+    }
+
+    .button {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 26.5px;
+        padding-right: 26.5px;
+        border-width: 3px;
+    }
+
+    .home-pm-row {
+        position: relative;
+        margin: 0 -15px;
+        text-align: center;
+    }
+
+    .home-pm-slider {
+        margin-bottom: 40px;
+
+        .slick-arrow {
+            width: 36px;
+            height: 69px;
+            z-index: 3;
+
+            &.slick-prev {
+                left: -69px;
+                top: 45.5%;
+                background-image: url("../images/arrow-green-left.png");
+            }
+
+            &.slick-next {
+                right: -69px;
+                top: 45.5%;
+                background-image: url("../images/arrow-green-right.png");
+            }
+
+            @include breakpoint(small-tablet-portrait) {
+                margin: 0 25px;
+            }
+        }
+
+        .home-pm-slider-item-content {
+            text-align: left;
+
+            h6 {
+                margin-top: 15px;
+                font-size: 18px;
+                letter-spacing: 0.1px;
+            }
+        }
+
+        .home-pm-slider-item {
+            padding: 0 15px;
+
+            img {
+                display: inline-block;
+                box-shadow: 0px 1px 15px -3px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        @include breakpoint(medium) {
+            .slick-arrow {
+                &.slick-prev {
+                    left: -45px;
+                }
+
+                &.slick-next {
+                    right: -45px;
+                }
+            }
+        }
+
+
+        @include breakpoint(small) {
+            margin-left: 50px;
+            margin-right: 50px;
+
+            .home-pm-slider-item-content {
+                text-align: center;
+
+                h6 {
+                    font-size: 14px;
+                }
+            }
+        }
+
+
+        @include breakpoint(extra-small) {
+            .slick-arrow {
+                &.slick-prev, &.slick-next {
+                    height: 50px;
+                }
+
+                &.slick-prev {
+                    left: 60px;
+                }
+
+                &.slick-next {
+                    right: 60px;
+                }
+            }
+        }
+
+
+        @include breakpoint(small-tablet-portrait) {
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-bottom: 25px;
+
+            .slick-arrow {
+                &.slick-prev {
+                    left: -50px;
+                }
+
+                &.slick-next {
+                    right: -50px;
+                }
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        padding-top: 0;
+        padding-bottom: 30px;
+    }
+}
+
+@include breakpoint(no-mobile) {
+    .patriot-in-media {
+        .standart-header {
+            opacity: 0;
+            transform: translateY(-80px);
+            transition-property: opacity, transform;
+            transition-duration: 0.8s;
+            transition-delay: 0.7s;
+        }
+
+        .home-pm-row {
+            opacity: 0;
+            transform: translateY(100px);
+            transition-property: opacity, transform;
+            transition-duration: 0.8s;
+        }
+
+        .button {
+            opacity: 0;
+            transform: translateY(60px);
+            transition-property: opacity, transform;
+            transition-duration: 0.8s;
+            transition-delay: 1s;
+        }
+
+        &.animation {
+            .standart-header {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .home-pm-row {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .button {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}

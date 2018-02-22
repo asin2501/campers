@@ -1,0 +1,64 @@
+.contact-us {
+    @include background-component($url: "../images/big-bg/contacts.jpg");
+
+    .contact-card {
+        width: 500px;
+        padding: 24px;
+
+        .contact-card-header {
+            min-height: 43px;
+            margin-bottom: 32px;
+        }
+    }
+}
+
+@include breakpoint(medium) {
+    .contact-us {
+        .contacts {
+            height: auto;
+            padding-top: 50px;
+            padding-bottom: 30px;
+
+            .contacts-content {
+                position: static;
+                max-width: 700px;
+                margin: auto;
+                transform: none;
+            }
+        }
+
+        .contact-card {
+            width: auto;
+        }
+    }
+}
+
+
+@include breakpoint(extra-small) {
+    .contact-us {
+        .contact-card {
+            width: 100%;
+            max-width: 550px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+}
+
+
+@include breakpoint(small-tablet-portrait) {
+    .contact-us {
+        .contact-card {
+            width: auto;
+            max-width: none;
+            margin-right: 15px;
+            margin-left: 15px;
+
+            .difficult-contact-list {
+                li {
+                    font-size: rem(12);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.jBox-wrapper {
+    .jBox-container {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+        background: rgba(255, 255, 255, 0.85);
+
+        .jBox-title {
+            display: none;
+        }
+
+        .jBox-content {
+            padding: 20px;
+
+            img {
+                width: 100%;
+            }
+
+            h4 {
+                padding-right: 40px;
+                margin-bottom: 10px;
+                font-size: rem(18);
+                letter-spacing: 1px;
+            }
+
+            .close-jbox {
+                position: absolute;
+                padding: 10px 20px;
+                font-size: rem(24px);
+                top: 0;
+                right: 0;
+            }
+
+            .description {
+                font-family: $pn-medium;
+            }
+
+            p {
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

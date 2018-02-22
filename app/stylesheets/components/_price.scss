@@ -1,0 +1,48 @@
+.price {
+    .from {
+        margin-bottom: 8px;
+        font-size: rem(21);
+        font-family: $pn-bold;
+        line-height: 1;
+    }
+
+    .number {
+        position: relative;
+        margin-bottom: 4px;
+        font-family: $pn-semibold;
+        font-size: 34px;
+        line-height: 40px;
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0%;
+            left: 0%;
+            display: block;
+            height: 1px;
+            background-color: #000;
+            background: linear-gradient(to right, transparent, #979ba0 20%, #979ba0 80%, transparent 100%);
+        }
+
+        &::after {
+            top: auto;
+            bottom: 0;
+        }
+
+        .sub-number-text {
+            padding-bottom: 5px;
+            font-size: 14px;
+            line-height: 10px;
+            text-transform: uppercase;
+        }
+    }
+
+    .sub-description {
+        font-size: rem(10);
+        line-height: 1;
+        text-transform: uppercase;
+        text-decoration: underline;
+        color: #474f2d;
+    }
+}

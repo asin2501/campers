@@ -1,0 +1,150 @@
+.compare-table {
+    font-family: $pn-light;
+    font-size: rem(12);
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 18px;
+    color: #000;
+
+    .section {
+        border-bottom: 5px solid #fff;
+        background-color: #f6f4f4;
+
+        div {
+            height: 20px;
+            box-sizing: content-box;
+
+            &:last-child {
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    .black {
+        background-color: #000;
+        min-height: 41px;
+        border-bottom: 5px solid #fff;
+        box-sizing: border-box;
+
+        h4 {
+            line-height: 40px;
+            font-family: $pn-bold;
+            font-size: rem(17);
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        & + div {
+            padding-top: 10px;
+        }
+    }
+
+    &.center {
+        z-index: 1;
+        position: absolute;
+        bottom: 0;
+        width: 30%;
+        left: 35%;
+
+        div:not(.black), div.black {
+            background-color: transparent;
+            border-color: transparent;
+        }
+    }
+
+    @include breakpoint(medium) {
+        font-size: rem(11);
+
+        .black {
+            h4 {
+                font-size: rem(14);
+            }
+        }
+    }
+
+
+    @include breakpoint(small) {
+        &.center {
+            width: 40%;
+            left: 30%;
+        }
+
+        &.left {
+            text-align: left;
+
+            .section {
+                div {
+                    padding-left: 30px;
+                }
+            }
+        }
+
+        &.right {
+            text-align: right;
+
+            .section {
+                div {
+                    padding-right: 30px;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(small-tablet-portrait) {
+        line-height: 1;
+
+        .section {
+            div:not(.black) {
+                height: 36px;
+            }
+
+            div {
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .black {
+            h4 {
+                font-size: 11px;
+            }
+        }
+
+        &.center {
+            width: 33%;
+            left: 33.5%;
+        }
+
+        &.left {
+            .section {
+                div:not(.black) {
+                    padding-left: 50px;
+                    max-width: 40%;
+                }
+            }
+        }
+
+        &.right {
+            .section {
+                div:not(.black) {
+                    padding-right: 50px;
+                    max-width: 40%;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        font-size: rem(9);
+
+        .black {
+            h4 {
+                font-size: 9px;
+            }
+        }
+    }
+}

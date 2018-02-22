@@ -1,0 +1,117 @@
+.range-list {
+    display: flex;
+    height: 18vh;
+    margin: 0 auto;
+    padding: 12px 0;
+    font-family: $pn-semibold;
+    text-align: center;
+    box-sizing: border-box;
+
+    li {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 33.33%;
+        padding: 15px;
+        border-right: 1px solid #000;
+
+        &:last-child {
+            border-right: none;
+        }
+
+        a {
+            display: inline-block;
+        }
+    }
+
+    img {
+        height: 70px;
+    }
+
+    h5 {
+        font-size: rem(15);
+        line-height: 1;
+        letter-spacing: rem(4);
+    }
+
+    .years {
+        height: 70px;
+        margin-top: 5px;
+        font-size: rem(28);
+        text-transform: uppercase;
+
+        .big-number {
+            font-size: rem(54);
+        }
+    }
+
+    @include breakpoint(large) {
+        padding: 15px 0;
+
+        img {
+            height: 50px;
+        }
+
+        .years {
+            height: 56px;
+            margin-top: 0;
+            font-size: rem(24);
+
+            .big-number {
+                font-size: rem(44);
+            }
+        }
+    }
+
+
+    @media (min-height: 1400px) {
+        height: 20vh;
+    }
+
+    @media (min-height: 1500px) {
+        height: 15vh;
+    }
+
+    @media (max-width: 1450px) {
+        height: 17vh;
+    }
+
+    @media (max-height: 850px) {
+        height: 20vh;
+    }
+
+    @media (min-width: 1920px) {
+        height: 17vh;
+    }
+
+    @media (min-width: 1921px) {
+        height: 14vh;
+        padding: 25px 0;
+    }
+
+    @include breakpoint(medium) {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        max-width: 400px;
+
+        h5 {
+            font-size: rem(13);
+            line-height: 1.2;
+        }
+
+        li {
+            width: auto;
+            border-right: none;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        h5 {
+            font-size: rem(11);
+        }
+    }
+}

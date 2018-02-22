@@ -1,0 +1,237 @@
+$feature-animation-time-coef: 1;
+
+.feature-options {
+    @extend .full-screen-component;
+
+    z-index: 120;
+    padding-top: 15vh;
+    overflow: hidden;
+
+    .feature-options-top {
+        position: relative;
+        height: 50vh;
+        margin: 0 130px;
+        background-image: url("../images/features-options.jpg");
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: 101% 100%;
+
+        .feature-options-description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 620px;
+            font-size: rem(13);
+            letter-spacing: normal;
+
+            .header-group {
+                margin-bottom: 30px;
+            }
+
+            h5 {
+                font-family: $pn-black;
+                font-size: rem(13);
+                text-transform: none;
+                letter-spacing: normal;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    @media (max-height: 900px) {
+        .feature-options-top {
+            margin: 0 70px;
+
+            .feature-options-description {
+                top: 20px;
+            }
+        }
+    }
+
+    @include breakpoint(no-mobile) {
+        .feature-options-top {
+            transform: translateX(100%);
+
+            .feature-options-description {
+                opacity: 0;
+            }
+        }
+
+        .feature-options-bottom {
+            opacity: 0;
+        }
+
+        &.animation {
+            .feature-options-top {
+                animation-name: simple-right-moving;
+                animation-duration: 1.5s * $feature-animation-time-coef;
+                animation-fill-mode: forwards;
+                animation-timing-function: linear;
+
+                .feature-options-description {
+                    animation-name: left-fade-in;
+                    animation-duration: 1.5s * $feature-animation-time-coef;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: linear;
+                }
+            }
+
+            .feature-options-bottom {
+                animation-name: slider-moving;
+                animation-duration: 1.5s * $feature-animation-time-coef;
+                animation-fill-mode: forwards;
+                animation-timing-function: linear;
+            }
+        }
+
+        &.reverse-animation {
+            .feature-options-top {
+                animation-name: reverse-simple-right-moving;
+                animation-duration: 1.5s * $feature-animation-time-coef;
+                animation-fill-mode: forwards;
+                animation-timing-function: linear;
+
+                .feature-options-description {
+                    animation-name: reverse-left-fade-in;
+                    animation-duration: 1.5s * $feature-animation-time-coef;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: linear;
+                }
+            }
+
+            .feature-options-bottom {
+                animation-name: reverse-slider-moving;
+                animation-duration: 1.5s * $feature-animation-time-coef;
+                animation-fill-mode: forwards;
+                animation-timing-function: linear;
+            }
+        }
+    }
+
+
+    @include breakpoint(medium) {
+        height: 80vh;
+        padding-top: 60px;
+        height: auto;
+
+        .feature-options-top {
+            height: auto;
+            background-size: contain;
+
+            .feature-options-description {
+                position: static;
+                margin-left: 0;
+                padding-bottom: 40vh;
+            }
+        }
+    }
+
+
+    @include breakpoint(small) {
+        .feature-options-top {
+            margin: 0 80px;
+
+            .feature-options-description {
+                padding-bottom: 25vh;
+            }
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .feature-options-top {
+            margin: 20px;
+            background-size: 160%;
+            background-position: 70% 100%;
+
+            .feature-options-description {
+                width: auto;
+                margin: 0;
+                padding-bottom: 34vh;
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        .feature-options-top {
+            .tabs {
+                li {
+                    width: 100%;
+
+                    .button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+
+    @media (max-width: 800px) and (max-height: 450px) {
+        .feature-options-top {
+            background-size: contain;
+            background-position: 50% 100%;
+
+            .feature-options-description {
+                width: auto;
+                margin: 0 30px;
+                padding-bottom: 75vh;
+            }
+        }
+    }
+}
+
+@keyframes left-fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-170%);
+    }
+
+    60% {
+        opacity: 0;
+        transform: translateX(-170%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes reverse-left-fade-in {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    40% {
+        opacity: 0;
+        transform: translateX(-170%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-170%);
+    }
+}
+
+@keyframes simple-right-moving {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes reverse-simple-right-moving {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}

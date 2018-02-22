@@ -1,0 +1,113 @@
+.single-product-demonstration {
+    .description-line-360 {
+        background-color: #FFF;
+
+        .product-content {
+            position: relative;
+            height: 60vh;
+
+            .feature-list {
+                transform: translateY(-100%);
+
+                h4 {
+                    padding: 0;
+                    color: #000;
+                }
+
+                li {
+                    a {
+                        color: #000;
+
+                        &.js-tab-link-active, &:hover {
+                            color: #7c7644;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        .description-line-360 {
+            width: 100%;
+
+            .product-content {
+                height: auto;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+
+    @media (max-width: 1199px) and (min-width: 681px) {
+        .description-line-360 {
+            .product-content {
+                .feature-list {
+                    position: static;
+                    display: block !important;
+                    width: 100%;
+                    transform: translate(0, 0);
+                    text-align: center;
+
+                    li {
+                        position: relative;
+                        display: inline-block;
+                        padding-left: 20px;
+                        padding-right: 15px;
+
+                        & + li {
+                            &::before {
+                                position: absolute;
+                                top: 50%;
+                                left: 0;
+                                height: 20px;
+                                width: 1px;
+                                margin: initial;
+                                transform: translateY(-50%);
+                            }
+                        }
+
+                        &:first-child {
+                            &::before {
+                                display: none;
+                            }
+                        }
+
+                        &:last-child {
+                            &::after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 680px) {
+        .description-line-360 {
+            .product-content {
+                .feature-list {
+                    position: static;
+                    display: block !important;
+                    transform: translate(0, 0);
+                    text-align: center;
+
+                    ul {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+
+    @include breakpoint(small-tablet-portrait) {
+        .description-line-360 {
+            .product-content {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    }
+}

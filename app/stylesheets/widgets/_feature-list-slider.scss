@@ -1,0 +1,35 @@
+.feature-list-slider {
+    max-width: 200px;
+
+    .slick-current {
+        a {
+            color: $green;
+        }
+    }
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        display: block;
+        height: 150px;
+    }
+
+    &::before {
+        top: -10px;
+        background: linear-gradient(to bottom, #fff 0%, transparent 100%);
+    }
+
+    &::after {
+        bottom: -10px;
+        background: linear-gradient(to top, #fff 0%, transparent 100%);
+    }
+
+    @include breakpoint(large) {
+        &::before, &::after {
+            height: 80px;
+        }
+    }
+}

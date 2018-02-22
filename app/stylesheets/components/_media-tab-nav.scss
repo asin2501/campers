@@ -1,0 +1,47 @@
+.media-tab-nav {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+
+    a {
+        display: block;
+        width: 160px;
+        margin: 0 8px;
+        padding: 5px 0;
+        border-top: 2px solid $light-green;
+        font-size: rem(9);
+        font-family: $pn-bold;
+        text-transform: uppercase;
+        text-align: right;
+        opacity: 0.5;
+        transition-property: opacity;
+        transition-duration: 0.4s;
+
+        &.js-tab-link-active, &:hover {
+            opacity: 1;
+        }
+    }
+
+    @include breakpoint(small) {
+        margin: 30px -8px;
+
+        li {
+            width: 33.33%;
+            padding: 8px;
+
+            a {
+                width: auto;
+                margin: 0;
+            }
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        margin: 30px -3px;
+
+        li {
+            padding: 3px;
+        }
+    }
+}

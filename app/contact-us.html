@@ -1,0 +1,110 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Product Landing</title>
+        <link rel="stylesheet" href="libs/slick/slick.css">
+        <link rel="stylesheet" href="libs/JBox/jBox.css">
+        <link rel="stylesheet" href="libs/lightbox/lightbox.css">
+        <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+    </head>
+    <body class="contact-us">
+        <div class="container">
+            <header class="header" id="header">
+                //= html-template/_top-header.html
+            </header>
+            <nav id="mp-menu" class="mp-menu">
+                <div class="mp-level">
+                    <h2 class="icon icon-world">Main menu</h2>
+                    <ul>
+                         //= html-template/_mobile-menu.html
+                    </ul>
+                </div>
+            </nav>
+            <div class="mp-pusher" id="mp-pusher">
+                <main class="contacts">
+                    <div class="contacts-content">
+                        <header class="contact-header">
+                           <h2>CONTACT PATRIOT</h2>
+                           <h6>GET IN TOUCH, HAVE A YARN</h6>
+                        </header>
+                        <div class="contact-card-line">
+                            <section class="contact-card">
+                                <div class="contact-card-header hight-header">
+                                    <h3>Patriot Campers HQ - QLD</h3>
+                                </div>
+                                <address>
+                                    <ul class="difficult-contact-list">
+                                        <li>
+                                            <div class="icon-contact"><i class="fa fa-home fa-lg"></i></div>
+                                            <div>
+                                                <span class="title">address</span>
+                                                <span>1 Activity Crescent, Molendinar, QLD 4214</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon-contact"><i class="fa fa-phone fa-lg"></i></div>
+                                            <div>
+                                                <span class="title">Phone</span>
+                                                <a href="tel:0755970638">07 5597 0638</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon-contact"><i class="fa fa-envelope fa-lg"></i></div>
+                                            <div>
+                                                <span class="title">mail</span>
+                                                <a href="mailto:sales@patriotcampers.com.au">sales@patriotcampers.com.au</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </address>
+                            </section>
+                            <section class="contact-form">
+                                <h3>Email Patriot Campers</h3>
+                                <form action="/" class="main-form clear-fix">
+                                    <div class="inner-wrapper-form">
+                                        <div class="customer-data">
+                                            <div class="input-data">
+                                                <label class="title" for="name">name</label>
+                                                <input type="name" id="name">
+                                            </div>
+                                            <div class="input-data">
+                                                <label class="title" for="email">email</label>
+                                                <input type="email" id="email">
+                                            </div>
+                                            <div class="input-data">
+                                                <label class="title" for="phone">phone</label>
+                                                <input type="tel" id="phone">
+                                            </div>
+                                            <div class="input-data">
+                                                <label class="title" for="postcode">postcode</label>
+                                                <input type="text" id="postcode">
+                                            </div>
+                                        </div>
+                                        <textarea class="message" name="message" placeholder="your message..."></textarea>
+                                    </div>
+                                    <div class="footer-form">
+                                        <!-- <div class="components-left"></div> -->
+
+                                        <div class="components-right">
+                                            <!-- <div class="g-recaptcha" data-size="compact" data-sitekey="6LcyKCUTAAAAAJkiIOmlb9YIvX7jZnAGi4hdqn9S"></div> -->
+                                            <button class="button black button-form">submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                        </div>
+                    </div>     
+                </main>
+                <footer class="animated-footer" id="footer">
+                    //= html-template/_footer-content.html
+                </footer>
+            </div>
+        </div>
+        //= html-template/_scripts.html
+    </body>     
+</html>

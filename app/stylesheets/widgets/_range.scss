@@ -1,0 +1,52 @@
+.range {
+    @extend .full-screen-component;
+
+    z-index: 120;
+
+    .range-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 22vh;
+        margin: 0;
+        padding-top: 130px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 1450px) {
+        .range-title {
+            height: 23vh;
+            font-size: rem(44);
+        }
+    }
+
+    @media (max-height: 850px) {
+        .range-title {
+            height: 26vh;
+        }
+    }
+
+    @media (min-width: 1920px) {
+        .range-title {
+            height: 23vh;
+        }
+    }
+
+    @include breakpoint(medium) {
+        height: auto;
+
+        .range-title {
+            height: auto;
+            padding-top: 65px;
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        .range-title {
+            padding-top: 45px;
+            font-size: rem(24);
+        }
+    }
+}

@@ -1,0 +1,104 @@
+.mobile-tour-slider {
+    display: none;
+
+    @include breakpoint(medium) {
+        display: block;
+        margin: 0 -20px;
+        z-index: 100;
+
+        .mobile-tour-slide {
+            padding: 0 20px;
+
+            .mobile-tour-slide-bg {
+                height: 40vw;
+                background-position: 50% 50%;
+                background-size: cover;
+
+                &.contain {
+                    background-size: contain;
+                }
+            }
+        }
+
+        .slick-dots {
+            display: flex !important;
+            justify-content: center;
+            padding-top: 20px;
+            padding-bottom: 30px;
+
+            li {
+                display: inline-block;
+
+                button {
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 8px;
+                    padding: 0;
+                    background-color: #000;
+                    border-radius: 10px;
+                    border: none;
+                    font-size: 0;
+                    opacity: 0.2;
+                }
+
+                &.slick-active {
+                    button {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .arrow-black-left {
+            left: -45px;
+            background-image: url("../images/arrow-black-left.png");
+            background-size: contain;
+        }
+
+        .arrow-black-right {
+            right: -45px;
+            background-image: url("../images/arrow-black-right.png");
+            background-size: contain;
+        }
+    }
+
+
+    @include breakpoint(small) {
+        .mobile-tour-slide {
+            .mobile-tour-slide-bg {
+                height: 60vw;
+            }
+        }
+
+        .slick-dots {
+            padding-top: 15px;
+            padding-bottom: 0;
+        }
+
+        .arrow-black-left, .arrow-black-right {
+            display: none !important;
+        }
+    }
+
+
+    @include breakpoint(mobile-landscape) {
+        .slick-dots {
+            li {
+                display: inline-block;
+
+                button {
+                    display: block;
+                    width: 7px;
+                    height: 7px;
+                    margin: 0 5px;
+                    padding: 0;
+                    background-color: #000;
+                    border-radius: 10px;
+                    font-size: 0;
+                    opacity: 0.2;
+                }
+            }
+        }
+    }
+}

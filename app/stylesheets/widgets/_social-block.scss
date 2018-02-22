@@ -1,0 +1,38 @@
+.social-block {
+    .social-icons {
+        display: flex;
+
+        li {
+            margin-left: 15px;
+            width: 35px;
+            height: 35px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .social-icon {
+        display: inline-block;
+        width: 35px;
+        line-height: 35px;
+        text-align: center;
+        background-color: $green;
+        color: #eeeeee;
+        transition-duration: 0.3s;
+        transition-property: transform;
+
+        &:hover {
+            transform: translateY(-7px);
+        }
+    }
+
+    .copyright {
+        margin-top: 25px;
+        line-height: 1.2;
+        font-size: rem(12px);
+        text-align: center;
+        color: #616161;
+    }
+}

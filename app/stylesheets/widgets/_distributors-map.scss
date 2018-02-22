@@ -1,0 +1,62 @@
+.distributors-map {
+    position: relative;
+
+    .map-container {
+        width: 100%;
+        height: calc(50vh - 60px);
+    }
+
+    .up-button {
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        z-index: 1;
+        display: none;
+
+        img {
+            transform: rotate(180deg);
+        }
+    }
+
+    @include breakpoint(medium) {
+        .map-container {
+            height: 50vh;
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .map-container {
+            height: calc(100vh - 175px);
+        }
+
+        .up-button {
+            display: block;
+        }
+
+        img[src="images/black-cross.png"] {
+            display: block !important;
+            width: 25px;
+            top: 12px !important;
+            right: 12px !important;
+        }
+    }
+
+
+    @include breakpoint(extra-small) {
+        .up-button {
+            width: 36px;
+        }
+    }
+
+
+    @include breakpoint(full-mobile-landscape) {
+        .map-container {
+            height: calc(100vh);
+
+            .up-button {
+                top: 100px;
+            }
+        }
+    }
+}
